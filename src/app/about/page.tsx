@@ -27,30 +27,27 @@ export default function AboutPage() {
         <Reveal delay={180} className="sm:col-span-2 space-y-6 text-foreground/80 leading-relaxed">
           <p>
             I write music for picture. Mostly film and games, sometimes
-            records. I work out of [city], and I&apos;ve been doing this for
-            about [N] years.
+            records. I&apos;m based in Austin and I&apos;ve been at this for
+            over five years.
           </p>
           <p>
-            My ear leans orchestral but I spend a lot of time on synths and
-            tape. The thing I care about most is fit. A score should sound
-            like it could not have been written for anything else.
+            I came up self-taught. Piano, guitar, bass, and a growing stack of
+            synths. No conservatory in the background, just a lot of headphone
+            hours and one cue at a time. I think that shows in the music. I&apos;d
+            rather chase a sound until it works than land on the safe choice.
           </p>
           <p>
-            Replace this with your own voice. Two or three short paragraphs.
-            Say something specific. Where you trained, who you&apos;ve worked
-            with, what kind of music you love. Cut anything that sounds like a
-            press release.
+            What I care about most is fit. A score should sound like it could
+            not have been written for anything else. If you&apos;re working on
+            something and want a real conversation about the music, I&apos;d love
+            to hear from you.
           </p>
 
           <div className="border-t border-[var(--border)] pt-8 mt-10 grid grid-cols-2 gap-6 text-sm">
-            <Block label="Writes">
-              Orchestral, electronic, chamber, hybrid
-            </Block>
-            <Block label="Works in">
-              Logic, Kontakt, Spitfire, live players
-            </Block>
-            <Block label="Trained at">[Your training]</Block>
-            <Block label="Based in">[Your city]</Block>
+            <Block label="Writes">Acoustic, electronic, hybrid</Block>
+            <Block label="Plays">Piano, guitar, bass, synths</Block>
+            <Block label="Trained">Self-taught</Block>
+            <Block label="Based in">Austin, TX</Block>
           </div>
         </Reveal>
       </div>
