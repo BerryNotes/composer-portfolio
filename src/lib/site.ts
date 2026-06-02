@@ -1,7 +1,7 @@
 export const SITE = {
-  name: "Your Name",
+  name: "Peter Vasilik",
   tagline: "Composer for film, TV, games, and collaborations.",
   email: "hello@yourdomain.com",
   spotifyArtistUrl: "https://open.spotify.com/artist/REPLACE_ME",
-  domain: "yourdomain.com",
+  domain: "peter-vasilik.vercel.app",
 };
