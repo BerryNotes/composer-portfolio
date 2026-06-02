@@ -110,6 +110,15 @@ export default async function ProjectPage(props: PageProps<"/work/[slug]">) {
             </Reveal>
           )}
 
+          {project.spotifyArtistId && (
+            <Reveal as="section" delay={280}>
+              <h2 className="text-sm uppercase tracking-[0.2em] text-foreground/50 mb-4">
+                Listen on Spotify
+              </h2>
+              <SpotifyEmbed type="artist" id={project.spotifyArtistId} />
+            </Reveal>
+          )}
+
           {project.spotifyPlaylistId && (
             <Reveal as="section" delay={340}>
               <h2 className="text-sm uppercase tracking-[0.2em] text-foreground/50 mb-4">
