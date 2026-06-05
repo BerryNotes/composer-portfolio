@@ -75,7 +75,7 @@ export default function HomePage() {
           <Reveal>
             <div className="grid sm:grid-cols-12 gap-10 mb-16">
               <div className="sm:col-span-4">
-                <p className="text-sm uppercase tracking-[0.2em] text-[var(--teal)] mb-3">
+                <p className="text-sm uppercase tracking-[0.2em] text-[var(--amber)] mb-3">
                   What I do
                 </p>
                 <h2 className="font-display text-3xl sm:text-4xl tracking-tight">
@@ -93,25 +93,32 @@ export default function HomePage() {
           </Reveal>
 
           <ul className="grid gap-px sm:grid-cols-2 bg-[var(--border)] border border-[var(--border)] rounded-xl overflow-hidden">
-            {SERVICES.map((s, i) => (
-              <Reveal as="li" key={s.title} delay={i * 80}>
-                <div className="group h-full bg-[var(--card)] p-8 sm:p-10 transition hover:bg-[var(--muted-bg)] relative">
-                  <span
-                    aria-hidden
-                    className="absolute top-6 right-6 text-xs text-foreground/30 tabular-nums tracking-wider"
-                  >
-                    0{i + 1}
-                  </span>
-                  <div className="text-[var(--teal)] mb-4">{s.icon}</div>
-                  <h3 className="font-display text-2xl tracking-tight mb-2">
-                    {s.title}
-                  </h3>
-                  <p className="text-foreground/70 leading-relaxed">
-                    {s.body}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
+            {SERVICES.map((s, i) => {
+              const accents = ["var(--teal)", "var(--amber)", "var(--rose)", "var(--indigo)"];
+              const accent = accents[i % accents.length];
+              return (
+                <Reveal as="li" key={s.title} delay={i * 80}>
+                  <div className="group h-full bg-[var(--card)] p-8 sm:p-10 transition hover:bg-[var(--muted-bg)] relative">
+                    <span
+                      aria-hidden
+                      className="absolute top-6 right-6 text-xs tabular-nums tracking-wider"
+                      style={{ color: accent, opacity: 0.7 }}
+                    >
+                      0{i + 1}
+                    </span>
+                    <div className="mb-4" style={{ color: accent }}>
+                      {s.icon}
+                    </div>
+                    <h3 className="font-display text-2xl tracking-tight mb-2">
+                      {s.title}
+                    </h3>
+                    <p className="text-foreground/70 leading-relaxed">
+                      {s.body}
+                    </p>
+                  </div>
+                </Reveal>
+              );
+            })}
           </ul>
         </div>
       </section>
@@ -124,7 +131,7 @@ export default function HomePage() {
           <Reveal>
             <div className="flex items-end justify-between mb-12">
               <div>
-                <p className="text-sm uppercase tracking-[0.2em] text-[var(--teal)] mb-3">
+                <p className="text-sm uppercase tracking-[0.2em] text-[var(--indigo)] mb-3">
                   Selected work
                 </p>
                 <h2 className="font-display text-3xl sm:text-4xl tracking-tight">
@@ -175,13 +182,13 @@ export default function HomePage() {
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "radial-gradient(50% 80% at 80% 100%, var(--teal-glow), transparent 70%)",
+              "radial-gradient(50% 80% at 80% 100%, var(--rose-glow), transparent 70%)",
           }}
         />
         <div className="relative mx-auto max-w-6xl px-6 py-24 sm:py-32">
           <Reveal>
             <div className="max-w-3xl">
-              <p className="text-sm uppercase tracking-[0.2em] text-[var(--teal)] mb-4">
+              <p className="text-sm uppercase tracking-[0.2em] text-[var(--rose)] mb-4">
                 Working on something
               </p>
               <h2 className="font-display text-4xl sm:text-5xl tracking-tight leading-[1.05]">

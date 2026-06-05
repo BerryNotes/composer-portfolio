@@ -8,9 +8,26 @@
   --border: #26262b;
   --accent: #ededed;
   --card: #111114;
+
+  /* Primary accent — used for links and the lead hover/active state */
   --teal: #5eb1ad;
   --teal-soft: #5eb1ad33;
   --teal-glow: #5eb1ad1a;
+
+  /* Secondary accents — small touches, not dominant. Used for category tags,
+     numbers, dividers, and the occasional glow. The site stays mostly mono,
+     these add warmth without fighting the moody photography. */
+  --amber: #e6b455;
+  --amber-soft: #e6b45533;
+  --amber-glow: #e6b4551a;
+
+  --rose: #d97a83;
+  --rose-soft: #d97a8333;
+  --rose-glow: #d97a831a;
+
+  --indigo: #8c92e8;
+  --indigo-soft: #8c92e833;
+  --indigo-glow: #8c92e81a;
 }
 
 @theme inline {
@@ -22,9 +39,25 @@
   --color-accent: var(--accent);
   --color-card: var(--card);
   --color-teal: var(--teal);
+  --color-amber: var(--amber);
+  --color-rose: var(--rose);
+  --color-indigo: var(--indigo);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-serif: var(--font-fraunces);
+}
+
+/* Subtle warm grain across the whole page — makes the dark feel less flat. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(60% 40% at 15% 8%, var(--amber-glow), transparent 70%),
+    radial-gradient(50% 35% at 90% 95%, var(--rose-glow), transparent 70%);
+  opacity: 0.9;
 }
 
 ::selection {

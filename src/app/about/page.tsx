@@ -56,6 +56,33 @@ export default function AboutPage() {
           </div>
         </Reveal>
       </div>
+
+      {/* Secondary portrait — formal event shot */}
+      <Reveal delay={120}>
+        <div className="mt-24 grid gap-12 sm:grid-cols-3 sm:items-center">
+          <div className="sm:col-span-2 space-y-5 text-foreground/80 leading-relaxed sm:order-2">
+            <p className="text-xs uppercase tracking-[0.2em] text-[var(--amber)]">
+              On stage and off
+            </p>
+            <p>
+              The other side of the work is showing up — readings, performances,
+              recitals, the occasional black-tie thing. The music is the point,
+              but the room around it matters too.
+            </p>
+          </div>
+          <div className="sm:col-span-1 sm:order-1">
+            <div className="relative aspect-[3/4] overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--muted-bg)]">
+              <Image
+                src="/portrait-formal.jpg"
+                alt={`${SITE.name} at a formal event`}
+                fill
+                sizes="(max-width: 640px) 100vw, 33vw"
+                className="object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </Reveal>
     </div>
   );
 }
