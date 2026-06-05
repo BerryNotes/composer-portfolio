@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { SITE } from "@/lib/site";
 import { Reveal } from "@/components/Reveal";
 
@@ -17,12 +18,16 @@ export default function AboutPage() {
 
       <div className="mt-12 grid gap-12 sm:grid-cols-3">
         <Reveal delay={120} className="sm:col-span-1">
-          <div className="aspect-[4/5] rounded-lg border border-dashed border-[var(--border)] bg-[var(--muted-bg)] flex items-center justify-center text-sm text-foreground/40">
-            Photo
+          <div className="relative aspect-[4/5] overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--muted-bg)]">
+            <Image
+              src="/portrait.jpg"
+              alt={`Portrait of ${SITE.name}`}
+              fill
+              sizes="(max-width: 640px) 100vw, 33vw"
+              className="object-cover"
+              priority
+            />
           </div>
-          <p className="mt-3 text-xs text-foreground/40">
-            Replace with a portrait at /public/portrait.jpg
-          </p>
         </Reveal>
         <Reveal delay={180} className="sm:col-span-2 space-y-6 text-foreground/80 leading-relaxed">
           <p>

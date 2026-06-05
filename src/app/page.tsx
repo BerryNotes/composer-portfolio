@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { PROJECTS } from "@/lib/projects";
 import { SITE } from "@/lib/site";
@@ -8,6 +9,19 @@ export default function HomePage() {
   return (
     <div>
       <section className="relative overflow-hidden">
+        <Image
+          src="/hero-piano.jpg"
+          alt=""
+          aria-hidden
+          fill
+          priority
+          sizes="100vw"
+          className="pointer-events-none object-cover opacity-25"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background"
+        />
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0"
