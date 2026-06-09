@@ -31,21 +31,19 @@ export default function AboutPage() {
         </Reveal>
         <Reveal delay={180} className="sm:col-span-2 space-y-6 text-foreground/80 leading-relaxed">
           <p>
-            I write music for picture. Mostly film and games, sometimes
-            records. I&apos;m based in Austin and I&apos;ve been at this for
-            over five years.
+            I am a composer for film, games, and the occasional artist
+            record. Based in Austin, Texas; working at this since 2020.
           </p>
           <p>
-            I came up self-taught. Piano, guitar, bass, and a growing stack of
-            synths. No conservatory in the background, just a lot of headphone
-            hours and one cue at a time. I think that shows in the music. I&apos;d
-            rather chase a sound until it works than land on the safe choice.
+            Self-taught across piano, guitar, bass, and a growing collection
+            of synths. The work tends to favor pursued ideas over safe ones —
+            a sound is finished when it works, not when it is acceptable.
           </p>
           <p>
-            What I care about most is fit. A score should sound like it could
-            not have been written for anything else. If you&apos;re working on
-            something and want a real conversation about the music, I&apos;d love
-            to hear from you.
+            Fit is the priority. A score should sound as if it could only
+            have been written for the project it serves. If you are
+            developing something and would like a substantive conversation
+            about the music, please get in touch.
           </p>
 
           <div className="border-t border-[var(--border)] pt-8 mt-10 grid grid-cols-2 gap-6 text-sm">
@@ -65,9 +63,9 @@ export default function AboutPage() {
               On stage and off
             </p>
             <p>
-              The other side of the work is showing up — readings, performances,
-              recitals, the occasional black-tie thing. The music is the point,
-              but the room around it matters too.
+              Alongside the studio work: recitals, readings, performances,
+              and the occasional formal event. The music is the focus, but
+              presence in the room is part of the practice.
             </p>
           </div>
           <div className="sm:col-span-1 sm:order-1">

@@ -27,15 +27,15 @@ export default function MusicPage() {
           </Reveal>
           <Reveal delay={80}>
             <h1 className="font-display text-5xl sm:text-6xl tracking-tight max-w-3xl">
-              Eight albums, a stack of singles,
+              Seven albums, two EPs, and a catalog
               <br />
-              and a YouTube channel that started it.
+              rooted in the channel that started it.
             </h1>
           </Reveal>
           <Reveal delay={180}>
             <p className="mt-6 max-w-2xl text-lg text-foreground/70 leading-relaxed">
-              If you only have ten minutes, pick a category below and start
-              with the first track. The full catalog is at the bottom.
+              A categorized selection of featured tracks is below, followed
+              by the complete discography.
             </p>
           </Reveal>
         </div>
@@ -49,11 +49,11 @@ export default function MusicPage() {
               Featured picks
             </p>
             <h2 className="font-display text-3xl sm:text-4xl tracking-tight mb-2">
-              Start here, by mood.
+              Start by mood.
             </h2>
             <p className="text-foreground/60 max-w-xl">
-              A few favorites from each side of the catalog. The tags on the
-              left are how I think about the sound, not strict genres.
+              Selected favorites from each side of the catalog. The labels
+              on the left reflect the sound, not strict genre.
             </p>
           </Reveal>
 
@@ -75,7 +75,7 @@ export default function MusicPage() {
               Discography
             </p>
             <h2 className="font-display text-3xl sm:text-4xl tracking-tight">
-              Everything, in order.
+              The complete discography.
             </h2>
           </Reveal>
 
@@ -94,14 +94,14 @@ export default function MusicPage() {
         <div className="mx-auto max-w-4xl px-6 py-20 sm:py-24">
           <Reveal>
             <p className="text-sm uppercase tracking-[0.2em] text-[var(--teal)] mb-3">
-              Or just hit play
+              Or simply listen
             </p>
             <h2 className="font-display text-3xl sm:text-4xl tracking-tight mb-8">
-              Listen to everything.
+              Listen in full.
             </h2>
             <SpotifyEmbed type="artist" id={SITE.spotifyArtistUrl.split("/").pop() || ""} />
             <p className="mt-6 text-sm text-foreground/50">
-              Also on{" "}
+              Also available on{" "}
               <Link
                 href="https://www.youtube.com/channel/UCkHfGiD8iH3_QfKJGruB44w"
                 className="text-foreground/70 hover:text-[var(--teal)] underline-grow"
@@ -161,19 +161,15 @@ function CategoryRow({ cat }: { cat: (typeof FEATURED)[number] }) {
                 </div>
               )}
             </div>
-            {t.spotifyTrackId ? (
+            {t.spotifyTrackId && (
               <Link
                 href={`https://open.spotify.com/track/${t.spotifyTrackId}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="shrink-0 inline-flex items-center gap-1 rounded-full border border-[var(--border)] px-3 py-1 text-xs text-foreground/60 hover:text-[var(--teal)] hover:border-[var(--teal)] transition"
               >
-                Play <span aria-hidden>↗</span>
+                Listen <span aria-hidden>↗</span>
               </Link>
-            ) : (
-              <span className="shrink-0 text-xs text-foreground/30 italic">
-                Spotify ID TBD
-              </span>
             )}
           </li>
         ))}

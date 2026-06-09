@@ -15,8 +15,9 @@ export default function WorkPage() {
           </p>
           <h1 className="font-display text-5xl tracking-tight">Work</h1>
           <p className="mt-4 max-w-2xl text-foreground/70">
-            A short list. I&apos;d rather show you a few things I&apos;m proud
-            of than a wall of credits.
+            A curated selection of recent and ongoing projects. Focused on
+            work that represents the practice rather than a comprehensive
+            credits list.
           </p>
         </header>
       </Reveal>

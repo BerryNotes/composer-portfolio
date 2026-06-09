@@ -10,8 +10,8 @@ export default function NotFound() {
         Off the page.
       </h1>
       <p className="mt-6 text-foreground/70 max-w-md mx-auto">
-        Whatever you were looking for, it isn&apos;t here. Maybe one of these
-        is closer.
+        The page you were looking for is not here. One of the links below
+        may help.
       </p>
       <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
         <Link

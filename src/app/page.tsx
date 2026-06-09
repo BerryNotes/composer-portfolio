@@ -45,9 +45,9 @@ export default function HomePage() {
           </Reveal>
           <Reveal delay={180}>
             <p className="mt-8 max-w-2xl text-lg text-foreground/70 leading-relaxed">
-              I&apos;m {SITE.name}, a composer working on film, television,
-              games, and the occasional artist record. If you&apos;ve got a
-              project that needs a score, I&apos;d love to hear about it.
+              {SITE.name}. Composer for film, television, games, and select
+              artist records. If you are developing a project that needs a
+              score, please get in touch.
             </p>
           </Reveal>
           <Reveal delay={260}>
@@ -85,9 +85,9 @@ export default function HomePage() {
                 </h2>
               </div>
               <p className="sm:col-span-7 sm:col-start-6 text-foreground/70 text-lg leading-relaxed">
-                Every project starts with a conversation. Tell me what
-                you&apos;re making, what it needs to feel like, and what
-                you&apos;ve already tried. The rest follows from there.
+                Each engagement begins with a conversation about the work,
+                its tone, and what has already been tried. Everything that
+                follows is built on that.
               </p>
             </div>
           </Reveal>
@@ -195,8 +195,8 @@ export default function HomePage() {
                 Tell me about it.
               </h2>
               <p className="mt-6 text-lg text-foreground/70 max-w-xl">
-                A short note about the project is plenty. Deadlines, format,
-                feel. I&apos;ll write back.
+                A short note about the project is enough. Deadlines, format,
+                and feel — I will respond.
               </p>
               <Link
                 href="/contact"
@@ -222,22 +222,22 @@ type Service = {
 const SERVICES: Service[] = [
   {
     title: "Original score",
-    body: "Full or partial scores for film, TV, and shorts. Spotting, sketching, demos, then live or sample-based recording.",
+    body: "Full or partial scores for film, television, and shorts. Spotting, sketching, demos, then live or sample-based recording.",
     icon: <FilmIcon />,
   },
   {
     title: "Game music",
-    body: "Adaptive scores built around the way players actually move. Vertical layers, horizontal cues, stems for Wwise or FMOD.",
+    body: "Adaptive scores designed around player movement. Vertical layers, horizontal cues, and stems delivered for Wwise or FMOD.",
     icon: <GameIcon />,
   },
   {
     title: "Arranging and orchestration",
-    body: "Strings, brass, woodwinds. Charting for live ensemble or programmed sessions, with delivery in stems and printed parts.",
+    body: "Strings, brass, and woodwinds. Charts for live ensemble or programmed sessions, delivered as stems and printed parts.",
     icon: <NoteIcon />,
   },
   {
     title: "Collaborations",
-    body: "Songwriting and co-production with artists. I bring instruments and a long ear. You bring the song.",
+    body: "Songwriting and co-production with artists. I bring instrumentation and a long ear; you bring the song.",
     icon: <CollabIcon />,
   },
 ];

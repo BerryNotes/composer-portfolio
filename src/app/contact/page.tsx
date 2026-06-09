@@ -31,8 +31,9 @@ export default function ContactPage() {
               Say hi.
             </h1>
             <p className="mt-6 text-lg text-foreground/70 max-w-xl">
-              Working on a film, a game, or a record. Send a few sentences
-              about it. I read every email and I&apos;ll write back.
+              If you are scoring a film, a game, or a record and need a
+              composer, send a few sentences about the project. Every
+              inquiry receives a response.
             </p>
           </Reveal>
         </div>

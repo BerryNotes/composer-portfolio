@@ -6,11 +6,7 @@ type Props = {
 
 export function SpotifyEmbed({ type, id, compact }: Props) {
   if (!id || id.startsWith("REPLACE")) {
-    return (
-      <div className="rounded-lg border border-dashed border-[var(--border)] bg-[var(--muted-bg)] px-4 py-6 text-sm text-foreground/50">
-        Spotify embed goes here. Add a real {type} ID in <code>src/lib/projects.ts</code>.
-      </div>
-    );
+    return null;
   }
   return (
     <iframe
