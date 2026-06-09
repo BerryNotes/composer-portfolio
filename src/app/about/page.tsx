@@ -35,8 +35,8 @@ export default function AboutPage() {
           </Reveal>
           <Reveal delay={160}>
             <p className="mt-6 max-w-xl text-lg text-foreground/80 leading-relaxed">
-              A composer for film, games, and the occasional artist record —
-              based in Austin, Texas.
+              A self-taught composer for film, games, theater, and the
+              occasional artist record — based in Austin, Texas.
             </p>
           </Reveal>
         </div>
@@ -57,18 +57,23 @@ export default function AboutPage() {
           </Reveal>
           <Reveal delay={180} className="sm:col-span-2 space-y-6 text-foreground/80 leading-relaxed">
             <p>
-              I am a composer for film, games, and the occasional artist
-              record. Based in Austin, Texas; working at this since 2020.
+              I am a self-taught composer based in Austin, Texas, writing for
+              film, games, theater, and the occasional artist record. I have
+              been releasing music since 2020.
             </p>
             <p>
-              Self-taught across piano, guitar, bass, and a growing collection
-              of synths. The work tends to favor pursued ideas over safe ones —
-              a sound is finished when it works, not when it is acceptable.
+              What ties the work together is curiosity rather than a single
+              style. The catalog runs from solo piano and ambient textures to
+              small-ensemble orchestral cues, jazz reharmonization, and a
+              long-running series of pieces composed inside a graphing
+              calculator. The range is the point — each project gets the sound
+              it actually needs, not the one I default to.
             </p>
             <p>
-              Fit is the priority. A score should sound as if it could only
-              have been written for the project it serves. If you are
-              developing something and would like a substantive conversation
+              For collaborators, that curiosity comes with discipline: clear
+              communication, work delivered to brief, and a score that sounds
+              as if it could only have been written for the thing it serves.
+              If you are developing a project and want a real conversation
               about the music, please get in touch.
             </p>
 
