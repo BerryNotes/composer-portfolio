@@ -57,30 +57,36 @@ export default function AboutPage() {
           </Reveal>
           <Reveal delay={180} className="sm:col-span-2 space-y-6 text-foreground/80 leading-relaxed">
             <p>
-              I am a self-taught composer based in Austin, Texas, writing for
-              film, games, theater, and the occasional artist record. I have
-              been releasing music since 2020.
+              It started in 2016 with a simple desire to learn the piano.
+              YouTube tutorials and a lot of listening turned that into
+              something larger, and by 2020 I was releasing my own music.
+              I have been self-taught the whole way.
             </p>
             <p>
-              What ties the work together is curiosity rather than a single
-              style. The catalog runs from solo piano and ambient textures to
-              small-ensemble orchestral cues, jazz reharmonization, and a
-              long-running series of pieces composed inside a graphing
-              calculator. The range is the point — each project gets the sound
-              it actually needs, not the one I default to.
+              I do not begin from classical technique or from ideas I have
+              used before. I start by picturing the project and asking what
+              it should make a person feel, then improvise toward that —
+              improvisation is the part of the craft I trust most. The result
+              is a wide catalog: solo piano and ambient textures, small-ensemble
+              orchestral cues, jazz reharmonization, and a series of pieces
+              composed inside a graphing calculator.
             </p>
             <p>
-              For collaborators, that curiosity comes with discipline: clear
-              communication, work delivered to brief, and a score that sounds
-              as if it could only have been written for the thing it serves.
-              If you are developing a project and want a real conversation
-              about the music, please get in touch.
+              Working to a brief suits me. I make decisions inside the
+              guidelines I am given and bring creativity without stepping
+              outside the bounds of the project — a score should sound as if
+              it could only have been written for the thing it serves. The
+              work I most want to do is the music for a small indie game with
+              a tragic story, but if you are developing anything that needs a
+              score, I would like to hear about it.
             </p>
 
             <div className="border-t border-[var(--border)] pt-8 mt-10 grid grid-cols-2 gap-6 text-sm">
               <Block label="Writes">Acoustic, electronic, hybrid</Block>
               <Block label="Plays">Piano, guitar, bass, synths</Block>
+              <Block label="Strength">Improvisation</Block>
               <Block label="Trained">Self-taught</Block>
+              <Block label="Playing since">2016</Block>
               <Block label="Based in">Austin, TX</Block>
             </div>
           </Reveal>
