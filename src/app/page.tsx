@@ -231,6 +231,18 @@ export default function HomePage() {
       </section>
 
       <section className="border-t border-[var(--border)] relative overflow-hidden">
+        <Image
+          src="/sky.jpg"
+          alt=""
+          aria-hidden
+          fill
+          sizes="100vw"
+          className="pointer-events-none object-cover opacity-25"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/60"
+        />
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0"

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { PROJECTS } from "@/lib/projects";
 import { Reveal } from "@/components/Reveal";
@@ -7,21 +8,40 @@ export const metadata = { title: "Work" };
 
 export default function WorkPage() {
   return (
-    <div className="mx-auto max-w-6xl px-6 py-20">
-      <Reveal>
-        <header className="mb-16">
-          <p className="text-sm uppercase tracking-[0.2em] text-[var(--teal)] mb-3">
-            Portfolio
-          </p>
-          <h1 className="font-display text-5xl tracking-tight">Work</h1>
-          <p className="mt-4 max-w-2xl text-foreground/70">
-            A curated selection of recent and ongoing projects. Focused on
-            work that represents the practice rather than a comprehensive
-            credits list.
-          </p>
-        </header>
-      </Reveal>
+    <div>
+      {/* Hero band — aurora backdrop */}
+      <section className="relative overflow-hidden border-b border-[var(--border)]">
+        <Image
+          src="/aurora.jpg"
+          alt=""
+          aria-hidden
+          fill
+          priority
+          sizes="100vw"
+          className="pointer-events-none object-cover opacity-30"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background/55 via-background/75 to-background"
+        />
+        <div className="relative mx-auto max-w-6xl px-6 py-20 sm:py-28">
+          <Reveal>
+            <p className="text-sm uppercase tracking-[0.2em] text-[var(--teal)] mb-3">
+              Portfolio
+            </p>
+            <h1 className="font-display text-5xl sm:text-6xl tracking-tight">
+              Work
+            </h1>
+            <p className="mt-4 max-w-2xl text-foreground/70">
+              A curated selection of recent and ongoing projects. Focused on
+              work that represents the practice rather than a comprehensive
+              credits list.
+            </p>
+          </Reveal>
+        </div>
+      </section>
 
+      <div className="mx-auto max-w-6xl px-6 py-20">
       <ul className="grid gap-10 sm:grid-cols-2">
         {PROJECTS.map((p, i) => (
           <Reveal as="li" key={p.slug} delay={i * 80}>
@@ -55,6 +75,7 @@ export default function WorkPage() {
           </Reveal>
         ))}
       </ul>
+      </div>
     </div>
   );
 }
