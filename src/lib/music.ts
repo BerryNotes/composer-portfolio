@@ -22,6 +22,18 @@ export type Release = {
   spotifyAlbumId?: string;
 };
 
+// ---- Featured songs hosted as real audio files (full tracks, press-play) ----
+export type AudioTrack = { title: string; src: string; duration?: string };
+
+export const FEATURED_AUDIO: AudioTrack[] = [
+  { title: "Autumn Song", src: "/audio/autumn-song.mp3", duration: "2:58" },
+  { title: "Water's Mist", src: "/audio/waters-mist.mp3", duration: "5:24" },
+  { title: "Ambiens", src: "/audio/ambiens.mp3", duration: "4:38" },
+  { title: "Thansa", src: "/audio/thansa.mp3", duration: "2:31" },
+  { title: "Chipton", src: "/audio/chipton.mp3", duration: "1:14" },
+  { title: "3.4", src: "/audio/untitled-34.mp3", duration: "2:02" },
+];
+
 // ---- Three tracks pulled up for the home page (most-played / best entry points) ----
 export const HOME_TRACKS: FeaturedTrack[] = [
   {

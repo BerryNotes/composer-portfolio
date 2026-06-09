@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   FEATURED,
+  FEATURED_AUDIO,
   RELEASES,
   ALBUM_EMBEDS,
   ACCENT_VARS,
@@ -9,6 +10,7 @@ import {
 } from "@/lib/music";
 import { SITE } from "@/lib/site";
 import { SpotifyEmbed } from "@/components/SpotifyEmbed";
+import { AudioPlayer } from "@/components/AudioPlayer";
 import { Reveal } from "@/components/Reveal";
 import { Waveform } from "@/components/Waveform";
 
@@ -51,6 +53,30 @@ export default function MusicPage() {
               Featured tracks by category are below — each one plays inline.
               The full albums and complete discography follow.
             </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Featured songs — real hosted audio, full tracks */}
+      <section className="border-b border-[var(--border)]">
+        <div className="mx-auto max-w-4xl px-6 py-20 sm:py-24">
+          <Reveal>
+            <div className="flex items-center gap-4 mb-3">
+              <p className="text-sm uppercase tracking-[0.2em] text-[var(--amber)]">
+                Featured songs
+              </p>
+              <Waveform bars={18} className="h-5" color="var(--amber)" />
+            </div>
+            <h2 className="font-display text-3xl sm:text-4xl tracking-tight mb-2">
+              Hand-picked, in full.
+            </h2>
+            <p className="text-foreground/60 max-w-xl mb-8">
+              A short set of complete tracks, hosted here and ready to play —
+              no preview cutoffs. Press play on any one.
+            </p>
+          </Reveal>
+          <Reveal delay={120}>
+            <AudioPlayer tracks={FEATURED_AUDIO} />
           </Reveal>
         </div>
       </section>
