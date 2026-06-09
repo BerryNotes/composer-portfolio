@@ -57,28 +57,39 @@ export default function AboutPage() {
           </Reveal>
           <Reveal delay={180} className="sm:col-span-2 space-y-6 text-foreground/80 leading-relaxed">
             <p>
-              It started in 2016 with a simple desire to learn the piano.
-              YouTube tutorials and a lot of listening turned that into
-              something larger, and by 2020 I was releasing my own music.
-              I have been self-taught the whole way.
+              It started in 2016, with nothing grander than a desire to learn
+              the piano; YouTube tutorials and a great deal of listening did
+              the rest, and by 2020 the songs I had been writing for myself
+              had become songs I was releasing for other people. I have been
+              self-taught the whole way through — which means the habits I
+              carry are the ones the music asked for, and not the ones a
+              classroom handed me.
             </p>
             <p>
-              I do not begin from classical technique or from ideas I have
-              used before. I start by picturing the project and asking what
-              it should make a person feel, then improvise toward that —
-              improvisation is the part of the craft I trust most. The result
-              is a wide catalog: solo piano and ambient textures, small-ensemble
-              orchestral cues, jazz reharmonization, and a series of pieces
-              composed inside a graphing calculator.
+              When a project comes to me, I do not begin from technique, or
+              from anything I have written before. I begin by picturing the
+              thing itself, and asking the only question that matters at the
+              start — what is this supposed to make a person feel? — and then
+              I improvise toward that feeling until it holds. Improvisation is
+              the part of the craft I trust most; it is the difference between
+              reading a map and walking the ground. What comes out of that is
+              a wide catalog: solo piano and ambient textures on one end,
+              small-ensemble orchestral cues and jazz reharmonization on the
+              other, and, off to the side, a series of pieces composed inside
+              a graphing calculator. The range is not an accident. Each
+              project gets the sound it actually needs, and not the one I
+              would have defaulted to.
             </p>
             <p>
-              Working to a brief suits me. I make decisions inside the
-              guidelines I am given and bring creativity without stepping
-              outside the bounds of the project — a score should sound as if
-              it could only have been written for the thing it serves. The
-              work I most want to do is the music for a small indie game with
-              a tragic story, but if you are developing anything that needs a
-              score, I would like to hear about it.
+              For the people I work with, that restlessness comes with
+              discipline. I make my decisions inside the guidelines I am
+              given, and I bring everything creative I can without ever
+              stepping outside the bounds of the project; a score, after all,
+              should sound as though it could only ever have been written for
+              the one thing it serves. The work I want most is the music for a
+              small indie game with a tragic story — the kind of project where
+              the feeling is the whole point — but if you are building anything
+              at all that needs a score, I would be glad to hear about it.
             </p>
 
             <div className="border-t border-[var(--border)] pt-8 mt-10 grid grid-cols-2 gap-6 text-sm">
