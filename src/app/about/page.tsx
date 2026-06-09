@@ -22,19 +22,19 @@ export default function AboutPage() {
           aria-hidden
           className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background/30 via-background/45 to-background"
         />
-        <div className="relative mx-auto max-w-4xl px-6 py-28 sm:py-36">
+        <div className="relative mx-auto max-w-4xl px-6 py-16 sm:py-20">
           <Reveal>
-            <p className="text-sm uppercase tracking-[0.2em] text-[var(--teal)] mb-3">
+            <p className="text-xs uppercase tracking-[0.2em] text-[var(--teal)] mb-2">
               About
             </p>
           </Reveal>
           <Reveal delay={80}>
-            <h1 className="font-display text-5xl sm:text-7xl tracking-tight">
+            <h1 className="font-display text-3xl sm:text-4xl tracking-tight">
               Hi, I&apos;m {SITE.name}.
             </h1>
           </Reveal>
           <Reveal delay={160}>
-            <p className="mt-6 max-w-xl text-lg text-foreground/80 leading-relaxed">
+            <p className="mt-4 max-w-xl text-base text-foreground/80 leading-relaxed">
               A self-taught composer for film, games, theater, and the
               occasional artist record — based in Austin, Texas.
             </p>
@@ -91,33 +91,6 @@ export default function AboutPage() {
             </div>
           </Reveal>
         </div>
-
-        {/* Secondary portrait — formal event shot */}
-        <Reveal delay={120}>
-          <div className="mt-24 grid gap-12 sm:grid-cols-3 sm:items-center">
-            <div className="sm:col-span-2 space-y-5 text-foreground/80 leading-relaxed sm:order-2">
-              <p className="text-xs uppercase tracking-[0.2em] text-[var(--amber)]">
-                On stage and off
-              </p>
-              <p>
-                Alongside the studio work: recitals, readings, performances,
-                and the occasional formal event. The music is the focus, but
-                presence in the room is part of the practice.
-              </p>
-            </div>
-            <div className="sm:col-span-1 sm:order-1">
-              <div className="relative aspect-[3/4] overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--muted-bg)]">
-                <Image
-                  src="/portrait-formal.jpg"
-                  alt={`${SITE.name} at a formal event`}
-                  fill
-                  sizes="(max-width: 640px) 100vw, 33vw"
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </Reveal>
       </div>
     </div>
   );
