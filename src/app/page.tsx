@@ -1,8 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { PROJECTS } from "@/lib/projects";
+import { HOME_TRACKS } from "@/lib/music";
 import { SITE } from "@/lib/site";
 import { Reveal } from "@/components/Reveal";
+import { Waveform } from "@/components/Waveform";
+import { SpotifyEmbed } from "@/components/SpotifyEmbed";
 
 export default function HomePage() {
   const featured = PROJECTS.slice(0, 3);
@@ -66,6 +69,57 @@ export default function HomePage() {
                 Get in touch
               </Link>
             </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Listen — playable tracks */}
+      <section className="border-t border-[var(--border)] relative">
+        <div
+          aria-hidden
+          className="absolute inset-0 texture-dots opacity-40 pointer-events-none"
+        />
+        <div className="relative mx-auto max-w-6xl px-6 py-24 sm:py-32">
+          <Reveal>
+            <div className="flex items-end justify-between mb-10 gap-4">
+              <div>
+                <div className="flex items-center gap-4 mb-3">
+                  <p className="text-sm uppercase tracking-[0.2em] text-[var(--teal)]">
+                    Listen
+                  </p>
+                  <Waveform bars={18} className="h-5" color="var(--teal)" />
+                </div>
+                <h2 className="font-display text-3xl sm:text-4xl tracking-tight">
+                  A few to start with.
+                </h2>
+              </div>
+              <Link
+                href="/music"
+                className="hidden sm:inline-flex items-center gap-1 text-sm text-foreground/70 hover:text-[var(--teal)] transition"
+              >
+                All music <ArrowRight />
+              </Link>
+            </div>
+          </Reveal>
+          <div className="grid gap-4 sm:grid-cols-3">
+            {HOME_TRACKS.map((t, i) => (
+              <Reveal key={t.spotifyTrackId} delay={i * 90}>
+                <div className="space-y-2">
+                  <SpotifyEmbed type="track" id={t.spotifyTrackId} compact />
+                  {t.note && (
+                    <p className="text-xs text-foreground/50 px-1">{t.note}</p>
+                  )}
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal>
+            <Link
+              href="/music"
+              className="sm:hidden mt-8 inline-flex items-center gap-1 text-sm text-foreground/70 hover:text-[var(--teal)] transition"
+            >
+              All music <ArrowRight />
+            </Link>
           </Reveal>
         </div>
       </section>

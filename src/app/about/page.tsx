@@ -81,6 +81,37 @@ export default function AboutPage() {
           </div>
         </div>
       </Reveal>
+
+      {/* Where it started — young piano video */}
+      <Reveal delay={120}>
+        <div className="mt-24 grid gap-12 sm:grid-cols-3 sm:items-center">
+          <div className="sm:col-span-1">
+            <div className="relative aspect-[3/4] overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--muted-bg)]">
+              <video
+                className="absolute inset-0 h-full w-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                poster="/piano-young-poster.jpg"
+              >
+                <source src="/piano-young.webm" type="video/webm" />
+                <source src="/piano-young.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+          <div className="sm:col-span-2 space-y-5 text-foreground/80 leading-relaxed">
+            <p className="text-xs uppercase tracking-[0.2em] text-[var(--indigo)]">
+              Where it started
+            </p>
+            <p>
+              Before any of the releases, there was a piano and a lot of
+              hours at it. The instinct has not changed — sit down, find the
+              feeling, follow it until it holds together.
+            </p>
+          </div>
+        </div>
+      </Reveal>
     </div>
   );
 }

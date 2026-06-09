@@ -1,11 +1,9 @@
-// Music catalog data. Spotify IDs marked TODO can be filled in by opening the
-// release's Spotify page and copying the segment after /album/ or /track/ in
-// the URL. The page handles missing IDs gracefully — entries without one
-// simply display without a Play button or external link.
+// Music catalog data. Track and album IDs below are real Spotify IDs, verified
+// against the artist's catalog, so every embed renders a working inline player.
 
 export type FeaturedTrack = {
   title: string;
-  spotifyTrackId?: string;
+  spotifyTrackId: string;
   note?: string;
 };
 
@@ -24,65 +22,52 @@ export type Release = {
   spotifyAlbumId?: string;
 };
 
-// ---- Featured picks (favorites, organized by sound) ----
+// ---- Three tracks pulled up for the home page (most-played / best entry points) ----
+export const HOME_TRACKS: FeaturedTrack[] = [
+  {
+    title: "Reflecting on Life",
+    spotifyTrackId: "1lDfdawaPGcLRgs23wXhNY",
+    note: "The most-played piece in the catalog.",
+  },
+  {
+    title: "I Didn't Know Desmos Could Sing",
+    spotifyTrackId: "5Ae1iAiBUtgdAb9PuvAixP",
+    note: "Sound design built inside a graphing calculator.",
+  },
+  {
+    title: "Nostalgia",
+    spotifyTrackId: "1C1W1BtUlCZGN8S87rwDhM",
+    note: "Solo piano.",
+  },
+];
 
+// ---- Featured picks, organized by sound (all playable) ----
 export const FEATURED: FeaturedCategory[] = [
   {
     key: "piano",
     label: "Piano",
     blurb:
-      "Solo piano and piano-led works. Reflective, slow-moving, and spacious.",
+      "Solo piano and piano-led works — reflective, slow-moving, and spacious.",
     accent: "amber",
     tracks: [
+      { title: "Reflecting on Life", spotifyTrackId: "1lDfdawaPGcLRgs23wXhNY" },
+      { title: "Nostalgia", spotifyTrackId: "1C1W1BtUlCZGN8S87rwDhM" },
       {
-        title: "Reflecting on Life",
-        spotifyTrackId: "1lDfdawaPGcLRgs23wXhNY",
-        note: "The most-played track on the channel.",
-      },
-      { title: "Nostalgia" },
-      {
-        title: "Piano Medley for Fall",
-        note: "Title track from the EP of the same name.",
+        title: "Raindrops on My Window",
+        spotifyTrackId: "5SaxnQFW0wgLxTb57dZKfd",
       },
     ],
   },
   {
-    key: "ambient",
-    label: "Ambient",
+    key: "desmos",
+    label: "Desmos experiments",
     blurb:
-      "Pads, textures, and slow swells. Designed to occupy a room without demanding attention.",
-    accent: "indigo",
-    tracks: [
-      { title: "Ripples", note: "Title track from the album." },
-      { title: "Stuck in an Elevator" },
-      { title: "Fleeting Emotions" },
-    ],
-  },
-  {
-    key: "cinematic",
-    label: "Cinematic",
-    blurb:
-      "Larger emotional arcs. Strings, swelling synths, and cues written to score a moment.",
-    accent: "rose",
-    tracks: [
-      { title: "Stages of Grief", note: "Title track from the album." },
-      {
-        title: "The World Is Everything That Is the Case",
-        note: "Title track from the 2026 album.",
-      },
-    ],
-  },
-  {
-    key: "experimental",
-    label: "Experimental",
-    blurb:
-      "Desmos-driven sound design, jazz reharmonizations, and ideas that began as experiments and were developed in full.",
+      "An ongoing series of pieces composed and sequenced entirely inside the Desmos graphing calculator — a signature thread in the catalog.",
     accent: "teal",
     tracks: [
       {
         title: "I Didn't Know Desmos Could Sing",
         spotifyTrackId: "5Ae1iAiBUtgdAb9PuvAixP",
-        note: "A breakout track on YouTube.",
       },
       {
         title: "Desmos Sounds Like a Church Organ",
@@ -92,13 +77,41 @@ export const FEATURED: FeaturedCategory[] = [
         title: "Making Beats in Desmos",
         spotifyTrackId: "44zIsnTmUvWcVrY0vmYZKv",
       },
-      { title: "Tritone Substitutions", note: "Title track from the album." },
+      {
+        title: "Megolovania in Desmos",
+        spotifyTrackId: "4LHXqID1zi74ClT7YVKUxh",
+      },
+    ],
+  },
+  {
+    key: "harmony",
+    label: "Harmony & jazz",
+    blurb:
+      "Reharmonizations and chord-voicing studies — the Inversions side of the catalog.",
+    accent: "indigo",
+    tracks: [
+      {
+        title: "I Thought It Was Real",
+        spotifyTrackId: "1ezjgiD2AQPkAPTGRvffQg",
+      },
+      {
+        title: "Computer Love Song",
+        spotifyTrackId: "3E2CE4GgA2PLJGzVqdgsjN",
+      },
     ],
   },
 ];
 
-// ---- Full catalog (newest first) ----
+// ---- Albums to embed in full on the music page (verified IDs) ----
+export const ALBUM_EMBEDS: { title: string; spotifyAlbumId: string }[] = [
+  { title: "Sounds from Desmos", spotifyAlbumId: "1goaHGnOcNDo3MwVSoVL26" },
+  {
+    title: "I Didn't Know Desmos Could Sing",
+    spotifyAlbumId: "4re36e5PtHz2hvgNmMuwGI",
+  },
+];
 
+// ---- Full catalog (newest first) ----
 export const RELEASES: Release[] = [
   { title: "The World Is Everything That Is the Case", year: "2026", kind: "Album" },
   { title: "Tritone Substitutions", year: "2025", kind: "Album" },
