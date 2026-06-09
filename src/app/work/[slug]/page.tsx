@@ -47,6 +47,7 @@ export default async function ProjectPage(props: PageProps<"/work/[slug]">) {
             category={project.category}
             aspect="wide"
             className="mb-10"
+            image={project.image}
           />
           <div className="flex flex-wrap gap-3 text-sm text-foreground/50 mb-4">
             <span>{project.year}</span>

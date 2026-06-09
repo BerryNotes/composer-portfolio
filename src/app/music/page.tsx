@@ -26,11 +26,11 @@ export default function MusicPage() {
           fill
           priority
           sizes="100vw"
-          className="pointer-events-none object-cover opacity-35"
+          className="pointer-events-none object-cover opacity-65"
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background/60 via-background/75 to-background"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background/30 via-background/55 to-background"
         />
         <div className="relative mx-auto max-w-6xl px-6 py-20 sm:py-28">
           <Reveal>

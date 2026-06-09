@@ -21,6 +21,7 @@ export type Project = {
   summary: string;
   description: string;
   poster?: string;
+  image?: string;
   spotifyAlbumId?: string;
   spotifyPlaylistId?: string;
   spotifyArtistId?: string;
@@ -35,6 +36,7 @@ export const PROJECTS: Project[] = [
     role: "Composer, performer, producer",
     year: "2022 – Present",
     category: "Original",
+    image: "/projects/berrynote-art.jpg",
     summary:
       "An ongoing YouTube channel of original instrumental works — piano pieces, synth compositions, and arrangements. Approximately 19,000 subscribers.",
     description:
@@ -54,6 +56,7 @@ export const PROJECTS: Project[] = [
     role: "Composer, sound designer, show-control developer",
     year: "2026",
     category: "Concert",
+    image: "/projects/ophelia.jpg",
     summary:
       "Original score and a custom web-based cue system for UATX's production of Hamlet. Two performances, approximately 150 in attendance per night.",
     description:
@@ -71,6 +74,7 @@ export const PROJECTS: Project[] = [
     role: "Composer, sound designer",
     year: "2023 – 2026",
     category: "Game",
+    image: "/projects/critter-catcher.jpg",
     summary:
       "Original scores and sound design for three indie game-jam entries across three years — calm ambient, small-ensemble orchestral, and electronic-ambient.",
     description:

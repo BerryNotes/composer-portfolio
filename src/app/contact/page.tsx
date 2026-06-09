@@ -15,12 +15,12 @@ export default function ContactPage() {
           aria-hidden
           fill
           sizes="100vw"
-          className="pointer-events-none object-cover opacity-30"
+          className="pointer-events-none object-cover opacity-60"
           priority
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background/50 via-background/70 to-background"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background/25 via-background/50 to-background"
         />
         <div className="relative mx-auto max-w-3xl px-6 py-24 sm:py-32">
           <Reveal>

@@ -19,11 +19,11 @@ export default function HomePage() {
           fill
           priority
           sizes="100vw"
-          className="pointer-events-none object-cover opacity-25"
+          className="pointer-events-none object-cover opacity-50"
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background/25 via-background/45 to-background"
         />
         <div
           aria-hidden
@@ -101,7 +101,7 @@ export default function HomePage() {
               </Link>
             </div>
           </Reveal>
-          <div className="grid gap-4 sm:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-3 items-start">
             {HOME_TRACKS.map((t, i) => (
               <Reveal key={t.spotifyTrackId} delay={i * 90}>
                 <div className="space-y-2">
@@ -237,11 +237,11 @@ export default function HomePage() {
           aria-hidden
           fill
           sizes="100vw"
-          className="pointer-events-none object-cover opacity-25"
+          className="pointer-events-none object-cover opacity-55"
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-background/85 to-background/60"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/35"
         />
         <div
           aria-hidden
