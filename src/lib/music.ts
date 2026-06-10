@@ -112,8 +112,18 @@ export const FEATURED: FeaturedCategory[] = [
 
 // ---- Full catalog (newest first) ----
 export const RELEASES: Release[] = [
-  { title: "The World Is Everything That Is the Case", year: "2026", kind: "Album" },
-  { title: "Tritone Substitutions", year: "2025", kind: "Album" },
+  {
+    title: "The World Is Everything That Is the Case",
+    year: "2026",
+    kind: "Album",
+    spotifyAlbumId: "6jg4Lc1foJRFO4NAWM9w2Y",
+  },
+  {
+    title: "Tritone Substitutions",
+    year: "2025",
+    kind: "Album",
+    spotifyAlbumId: "2K76bn4iZrqsrhdi8Rr6B3",
+  },
   {
     title: "Sounds from Desmos",
     year: "2025",
@@ -128,14 +138,50 @@ export const RELEASES: Release[] = [
     kind: "Single",
     spotifyAlbumId: "4re36e5PtHz2hvgNmMuwGI",
   },
-  { title: "Inversions", year: "2025", kind: "EP" },
-  { title: "Stages of Grief", year: "2024", kind: "Album" },
-  { title: "Piano Medley for Fall", year: "2024", kind: "EP" },
+  {
+    title: "Inversions",
+    year: "2025",
+    kind: "EP",
+    spotifyAlbumId: "2inRax2rgIDCjQoshl2Wei",
+  },
+  {
+    title: "Stages of Grief",
+    year: "2024",
+    kind: "Album",
+    spotifyAlbumId: "12fEWa8fymUpsizZcEjmw9",
+  },
+  {
+    title: "Piano Medley for Fall",
+    year: "2024",
+    kind: "EP",
+    spotifyAlbumId: "0fYeaC8FgXMIwd9ndsWFTM",
+  },
   { title: "Get Dissed.", year: "2024", kind: "Single" },
-  { title: "Stuck in an Elevator", year: "2023", kind: "Album" },
+  {
+    title: "Stuck in an Elevator",
+    year: "2023",
+    kind: "Album",
+    spotifyAlbumId: "0okNaeeNuMjItdHkCOffcM",
+  },
   { title: "Reflections", year: "2022", kind: "Album" },
-  { title: "Fleeting Emotions", year: "2022", kind: "Album" },
+  {
+    title: "Fleeting Emotions",
+    year: "2022",
+    kind: "Album",
+    spotifyAlbumId: "2qAbhf7WbynitEpIJIiACR",
+  },
   { title: "Ripples", year: "2021", kind: "Album" },
+];
+
+// ---- Albums to showcase in full on the music page (non-Desmos records) ----
+export const ALBUM_EMBEDS: { title: string; spotifyAlbumId: string }[] = [
+  { title: "The World Is Everything That Is the Case", spotifyAlbumId: "6jg4Lc1foJRFO4NAWM9w2Y" },
+  { title: "Tritone Substitutions", spotifyAlbumId: "2K76bn4iZrqsrhdi8Rr6B3" },
+  { title: "Stages of Grief", spotifyAlbumId: "12fEWa8fymUpsizZcEjmw9" },
+  { title: "Inversions", spotifyAlbumId: "2inRax2rgIDCjQoshl2Wei" },
+  { title: "Piano Medley for Fall", spotifyAlbumId: "0fYeaC8FgXMIwd9ndsWFTM" },
+  { title: "Stuck in an Elevator", spotifyAlbumId: "0okNaeeNuMjItdHkCOffcM" },
+  { title: "Fleeting Emotions", spotifyAlbumId: "2qAbhf7WbynitEpIJIiACR" },
 ];
 
 export type AccentKey = FeaturedCategory["accent"];

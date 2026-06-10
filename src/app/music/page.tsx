@@ -4,6 +4,7 @@ import {
   FEATURED,
   FEATURED_AUDIO,
   RELEASES,
+  ALBUM_EMBEDS,
   ACCENT_VARS,
   ACCENT_GLOW_VARS,
 } from "@/lib/music";
@@ -133,6 +134,30 @@ export default function MusicPage() {
               synthesis, and mixing. Every release is self-produced end to end.
             </p>
           </Reveal>
+        </div>
+      </section>
+
+      {/* Albums — full records, playable */}
+      <section className="border-b border-[var(--border)]">
+        <div className="mx-auto max-w-6xl px-6 py-20 sm:py-24">
+          <Reveal>
+            <p className="text-sm uppercase tracking-[0.2em] text-[var(--indigo)] mb-3">
+              Albums
+            </p>
+            <h2 className="font-display text-3xl sm:text-4xl tracking-tight mb-2">
+              Full records.
+            </h2>
+            <p className="text-foreground/60 max-w-xl mb-10">
+              The albums and EPs in full — press play on any of them.
+            </p>
+          </Reveal>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {ALBUM_EMBEDS.map((a, i) => (
+              <Reveal key={a.spotifyAlbumId} delay={i * 60}>
+                <SpotifyEmbed type="album" id={a.spotifyAlbumId} compact />
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
