@@ -12,7 +12,7 @@ export default function WorkPage() {
       <section className="relative overflow-hidden border-b border-[var(--border)]">
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-cover bg-center bg-fixed opacity-60"
+          className="pointer-events-none absolute inset-0 bg-cover bg-center bg-fixed opacity-65"
           style={{ backgroundImage: "url(/aurora.jpg)" }}
         />
         <div
