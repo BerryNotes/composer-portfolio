@@ -62,22 +62,15 @@ export default function HomePage() {
       <section className="border-t border-[var(--border)]">
         <div className="mx-auto max-w-6xl px-6 py-24 sm:py-32">
           <Reveal>
-            <div className="grid sm:grid-cols-12 gap-10 mb-16">
-              <div className="sm:col-span-4">
-                <p className="text-sm uppercase tracking-[0.2em] text-[var(--amber)] mb-3">
-                  What I do
-                </p>
-                <h2 className="font-display text-3xl sm:text-4xl tracking-tight">
-                  Four ways
-                  <br />
-                  I show up.
-                </h2>
-              </div>
-              <p className="sm:col-span-7 sm:col-start-6 text-foreground/70 text-lg leading-relaxed">
-                Every project starts with a real conversation — the work, the
-                feeling it needs, and what has already been tried. Everything
-                that follows is built on that!
+            <div className="mb-16">
+              <p className="text-sm uppercase tracking-[0.2em] text-[var(--amber)] mb-3">
+                What I do
               </p>
+              <h2 className="font-display text-3xl sm:text-4xl tracking-tight">
+                Four ways
+                <br />
+                I show up.
+              </h2>
             </div>
           </Reveal>
 
@@ -179,16 +172,9 @@ export default function HomePage() {
               </p>
               <Waveform bars={18} className="h-5" color="var(--teal)" />
             </div>
-            <h2 className="font-display text-3xl sm:text-4xl tracking-tight mb-5">
+            <h2 className="font-display text-3xl sm:text-4xl tracking-tight">
               Featured!
             </h2>
-            <p className="max-w-2xl text-lg text-foreground/70 leading-relaxed">
-              I&apos;m {SITE.name} — a self-taught composer who starts every
-              project from a single question: what should this make you feel?
-              What I want most is to score a small indie game with a tragic
-              story, but I&apos;d be glad to hear about anything that needs
-              music!
-            </p>
           </Reveal>
 
           <div className="mt-12 grid gap-8 lg:grid-cols-3 items-start">
