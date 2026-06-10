@@ -153,7 +153,12 @@ export default function MusicPage() {
           <div className="grid gap-4 sm:grid-cols-2">
             {ALBUM_EMBEDS.map((a, i) => (
               <Reveal key={a.spotifyAlbumId} delay={i * 60}>
-                <SpotifyEmbed type="album" id={a.spotifyAlbumId} compact />
+                <SpotifyEmbed
+                  type="album"
+                  id={a.spotifyAlbumId}
+                  compact
+                  title={a.title}
+                />
               </Reveal>
             ))}
           </div>
@@ -220,6 +225,7 @@ function CategoryBlock({ cat }: { cat: (typeof FEATURED)[number] }) {
               type="track"
               id={t.spotifyTrackId}
               compact
+              title={t.title}
             />
           ))}
         </div>

@@ -135,7 +135,11 @@ export default async function ProjectPage(props: PageProps<"/work/[slug]">) {
               <h2 className="text-sm uppercase tracking-[0.2em] text-foreground/50 mb-4">
                 Listen on Spotify
               </h2>
-              <SpotifyEmbed type="album" id={project.spotifyAlbumId} />
+              <SpotifyEmbed
+                type="album"
+                id={project.spotifyAlbumId}
+                title={`${project.title} — album`}
+              />
             </Reveal>
           )}
 
@@ -144,7 +148,11 @@ export default async function ProjectPage(props: PageProps<"/work/[slug]">) {
               <h2 className="text-sm uppercase tracking-[0.2em] text-foreground/50 mb-4">
                 Listen on Spotify
               </h2>
-              <SpotifyEmbed type="artist" id={project.spotifyArtistId} />
+              <SpotifyEmbed
+                type="artist"
+                id={project.spotifyArtistId}
+                title="LiteBeats — full artist catalog"
+              />
             </Reveal>
           )}
 
