@@ -5,7 +5,6 @@ import { HOME_FEATURED, ACCENT_VARS } from "@/lib/music";
 import { SITE } from "@/lib/site";
 import { Reveal } from "@/components/Reveal";
 import { Waveform } from "@/components/Waveform";
-import { SpotifyEmbed } from "@/components/SpotifyEmbed";
 import { AudioPlayer } from "@/components/AudioPlayer";
 
 export default function HomePage() {
@@ -192,7 +191,7 @@ export default function HomePage() {
             </p>
           </Reveal>
 
-          <div className="mt-12 space-y-12">
+          <div className="mt-12 grid gap-8 lg:grid-cols-3 items-start">
             {HOME_FEATURED.map((group, gi) => (
               <Reveal key={group.label} delay={gi * 80}>
                 <div>
@@ -208,32 +207,23 @@ export default function HomePage() {
                       {group.label}
                     </p>
                   </div>
-                  <div className="grid gap-4 sm:grid-cols-3 items-start">
-                    {group.items.map((item) =>
-                      item.spotifyTrackId ? (
-                        <SpotifyEmbed
-                          key={item.spotifyTrackId}
-                          type="track"
-                          id={item.spotifyTrackId}
-                          compact
-                        />
-                      ) : (
-                        <AudioPlayer key={item.src} tracks={[item]} />
-                      )
-                    )}
-                  </div>
+                  <AudioPlayer tracks={group.items} />
                 </div>
               </Reveal>
             ))}
           </div>
 
           <Reveal>
-            <Link
-              href="/music"
-              className="mt-10 inline-flex items-center gap-1 text-sm text-foreground/70 hover:text-[var(--teal)] transition"
-            >
-              All music <ArrowRight />
-            </Link>
+            <p className="mt-8 text-sm text-foreground/50">
+              Streaming tracks play a short preview — hear them in full on{" "}
+              <Link
+                href="/music"
+                className="text-foreground/70 hover:text-[var(--teal)] underline-grow"
+              >
+                the music page
+              </Link>
+              .
+            </p>
           </Reveal>
         </div>
       </section>

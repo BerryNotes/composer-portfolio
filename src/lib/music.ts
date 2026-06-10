@@ -48,33 +48,35 @@ export type FeaturedGroup = {
   items: FeaturedItem[];
 };
 
+// Streaming tracks play a Spotify 30-second preview (downloaded so they run
+// through the same player as the hosted files). Lasier is the full track.
 export const HOME_FEATURED: FeaturedGroup[] = [
   {
     label: "Electronic",
     accent: "teal",
     items: [
-      { title: "Games of Language", spotifyTrackId: "10bu7GMzpBKKnbTTzpkYKW" },
+      { title: "Games of Language", src: "/audio/preview/games-of-language.mp3", duration: "0:27" },
       { title: "Lasier", src: "/audio/lasier.mp3", duration: "2:45" },
-      { title: "Deciduous Daydream", spotifyTrackId: "32kVg4QvAKFQ1aYTwIZFNp" },
+      { title: "Deciduous Daydream", src: "/audio/preview/deciduous-daydream.mp3", duration: "0:17" },
     ],
   },
   {
     label: "Ambient",
     accent: "indigo",
     items: [
-      { title: "Water's Mist", spotifyTrackId: "32VX116l1xPhIqs8zEgOx4" },
-      { title: "Friendship Is Magic", spotifyTrackId: "4YTPdnKcJUYvtaVYT0yUxo" },
-      { title: "Last One", spotifyTrackId: "3lS6mKaNZZn8ZGqqvOx09h" },
+      { title: "Water's Mist", src: "/audio/preview/waters-mist-sp.mp3", duration: "0:24" },
+      { title: "Friendship Is Magic", src: "/audio/preview/friendship-is-magic.mp3", duration: "0:27" },
+      { title: "Last One", src: "/audio/preview/last-one.mp3", duration: "0:29" },
     ],
   },
   {
     label: "Classical",
     accent: "amber",
     items: [
-      { title: "Rouick", spotifyTrackId: "6l9HadzdXz6CBjB7Ctv2ys" },
-      { title: "The Leaves Are Changing...", spotifyTrackId: "5B5SIiukWLJAzJ4fOgJscZ" },
-      { title: "Reflecting on Life", spotifyTrackId: "1lDfdawaPGcLRgs23wXhNY" },
-      { title: "Moonlight Waltz", spotifyTrackId: "0pTuYm4I2SwbFUSF2ohuNJ" },
+      { title: "Rouick", src: "/audio/preview/rouick.mp3", duration: "0:19" },
+      { title: "The Leaves Are Changing...", src: "/audio/preview/leaves-changing.mp3", duration: "0:20" },
+      { title: "Reflecting on Life", src: "/audio/preview/reflecting-on-life.mp3", duration: "0:29" },
+      { title: "Moonlight Waltz", src: "/audio/preview/moonlight-waltz.mp3", duration: "0:29" },
     ],
   },
 ];
