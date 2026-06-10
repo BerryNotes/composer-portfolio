@@ -42,9 +42,9 @@ export const HOME_TRACKS: FeaturedTrack[] = [
     note: "The most-played piece in the catalog.",
   },
   {
-    title: "I Didn't Know Desmos Could Sing",
-    spotifyTrackId: "5Ae1iAiBUtgdAb9PuvAixP",
-    note: "Sound design built inside a graphing calculator.",
+    title: "I Thought It Was Real",
+    spotifyTrackId: "1ezjgiD2AQPkAPTGRvffQg",
+    note: "From the harmony-and-jazz side of the catalog.",
   },
   {
     title: "Nostalgia",
@@ -71,31 +71,6 @@ export const FEATURED: FeaturedCategory[] = [
     ],
   },
   {
-    key: "desmos",
-    label: "Desmos experiments",
-    blurb:
-      "An ongoing series of pieces composed and sequenced entirely inside the Desmos graphing calculator — a signature thread in the catalog.",
-    accent: "teal",
-    tracks: [
-      {
-        title: "I Didn't Know Desmos Could Sing",
-        spotifyTrackId: "5Ae1iAiBUtgdAb9PuvAixP",
-      },
-      {
-        title: "Desmos Sounds Like a Church Organ",
-        spotifyTrackId: "0qoGSoAsSDo29dyWBfsdtC",
-      },
-      {
-        title: "Making Beats in Desmos",
-        spotifyTrackId: "44zIsnTmUvWcVrY0vmYZKv",
-      },
-      {
-        title: "Megolovania in Desmos",
-        spotifyTrackId: "4LHXqID1zi74ClT7YVKUxh",
-      },
-    ],
-  },
-  {
     key: "harmony",
     label: "Harmony & jazz",
     blurb:
@@ -110,16 +85,28 @@ export const FEATURED: FeaturedCategory[] = [
         title: "Computer Love Song",
         spotifyTrackId: "3E2CE4GgA2PLJGzVqdgsjN",
       },
+      {
+        title: "Ring Doorbell",
+        spotifyTrackId: "2crI9oMJFIbF3n6nCaTaPw",
+      },
     ],
   },
-];
-
-// ---- Albums to embed in full on the music page (verified IDs) ----
-export const ALBUM_EMBEDS: { title: string; spotifyAlbumId: string }[] = [
-  { title: "Sounds from Desmos", spotifyAlbumId: "1goaHGnOcNDo3MwVSoVL26" },
   {
-    title: "I Didn't Know Desmos Could Sing",
-    spotifyAlbumId: "4re36e5PtHz2hvgNmMuwGI",
+    key: "desmos",
+    label: "Desmos experiments",
+    blurb:
+      "A side project composed entirely inside the Desmos graphing calculator.",
+    accent: "teal",
+    tracks: [
+      {
+        title: "I Didn't Know Desmos Could Sing",
+        spotifyTrackId: "5Ae1iAiBUtgdAb9PuvAixP",
+      },
+      {
+        title: "Making Beats in Desmos",
+        spotifyTrackId: "44zIsnTmUvWcVrY0vmYZKv",
+      },
+    ],
   },
 ];
 

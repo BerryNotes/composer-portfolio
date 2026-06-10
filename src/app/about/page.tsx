@@ -9,16 +9,12 @@ export default function AboutPage() {
   const heading = ABOUT.heading.replace("{name}", SITE.name);
   return (
     <div>
-      {/* Large colorful hero — aurora, bold */}
+      {/* Large colorful hero — aurora, bold, fixed to the viewport */}
       <section className="relative overflow-hidden border-b border-[var(--border)]">
-        <Image
-          src="/aurora.jpg"
-          alt=""
+        <div
           aria-hidden
-          fill
-          priority
-          sizes="100vw"
-          className="pointer-events-none object-cover opacity-70"
+          className="pointer-events-none absolute inset-0 bg-cover bg-center bg-fixed opacity-70"
+          style={{ backgroundImage: "url(/aurora.jpg)" }}
         />
         <div
           aria-hidden

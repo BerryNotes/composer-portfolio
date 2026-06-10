@@ -4,7 +4,6 @@ import {
   FEATURED,
   FEATURED_AUDIO,
   RELEASES,
-  ALBUM_EMBEDS,
   ACCENT_VARS,
   ACCENT_GLOW_VARS,
 } from "@/lib/music";
@@ -19,16 +18,12 @@ export const metadata = { title: "Music" };
 export default function MusicPage() {
   return (
     <div>
-      {/* Hero — aurora backdrop + waveform */}
+      {/* Hero — aurora backdrop (fixed to the viewport) + waveform */}
       <section className="relative overflow-hidden border-b border-[var(--border)]">
-        <Image
-          src="/aurora.jpg"
-          alt=""
+        <div
           aria-hidden
-          fill
-          priority
-          sizes="100vw"
-          className="pointer-events-none object-cover opacity-65"
+          className="pointer-events-none absolute inset-0 bg-cover bg-center bg-fixed opacity-65"
+          style={{ backgroundImage: "url(/aurora.jpg)" }}
         />
         <div
           aria-hidden
@@ -138,27 +133,6 @@ export default function MusicPage() {
               synthesis, and mixing. Every release is self-produced end to end.
             </p>
           </Reveal>
-        </div>
-      </section>
-
-      {/* Full albums — playable */}
-      <section className="border-b border-[var(--border)]">
-        <div className="mx-auto max-w-6xl px-6 py-20 sm:py-24">
-          <Reveal>
-            <p className="text-sm uppercase tracking-[0.2em] text-[var(--indigo)] mb-3">
-              Albums
-            </p>
-            <h2 className="font-display text-3xl sm:text-4xl tracking-tight">
-              Full records.
-            </h2>
-          </Reveal>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2">
-            {ALBUM_EMBEDS.map((a, i) => (
-              <Reveal key={a.spotifyAlbumId} delay={i * 100}>
-                <SpotifyEmbed type="album" id={a.spotifyAlbumId} />
-              </Reveal>
-            ))}
-          </div>
         </div>
       </section>
 

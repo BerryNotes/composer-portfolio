@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { PROJECTS } from "@/lib/projects";
 import { Reveal } from "@/components/Reveal";
@@ -9,16 +8,12 @@ export const metadata = { title: "Work" };
 export default function WorkPage() {
   return (
     <div>
-      {/* Hero band — aurora backdrop */}
+      {/* Hero band — aurora backdrop (fixed to the viewport) */}
       <section className="relative overflow-hidden border-b border-[var(--border)]">
-        <Image
-          src="/aurora.jpg"
-          alt=""
+        <div
           aria-hidden
-          fill
-          priority
-          sizes="100vw"
-          className="pointer-events-none object-cover opacity-60"
+          className="pointer-events-none absolute inset-0 bg-cover bg-center bg-fixed opacity-60"
+          style={{ backgroundImage: "url(/aurora.jpg)" }}
         />
         <div
           aria-hidden
