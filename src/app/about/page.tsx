@@ -9,17 +9,17 @@ export default function AboutPage() {
   const heading = ABOUT.heading.replace("{name}", SITE.name);
   return (
     <div>
-      {/* Large colorful hero — aurora, bold, fixed to the viewport */}
-      <section className="relative overflow-hidden border-b border-[var(--border)]">
+      {/* Page-wide fixed backdrop — the aurora stays semi-visible as you scroll */}
+      <div aria-hidden className="pointer-events-none fixed inset-0 -z-10">
         <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 bg-cover bg-center bg-fixed opacity-65"
+          className="absolute inset-0 bg-cover bg-center opacity-70"
           style={{ backgroundImage: "url(/aurora.jpg)" }}
         />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background/30 via-background/45 to-background"
-        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/45 to-background/85" />
+      </div>
+
+      {/* Hero */}
+      <section className="relative overflow-hidden border-b border-[var(--border)]">
         <div className="relative mx-auto max-w-4xl px-6 py-16 sm:py-20">
           <Reveal>
             <p className="text-xs uppercase tracking-[0.2em] text-[var(--teal)] mb-2">

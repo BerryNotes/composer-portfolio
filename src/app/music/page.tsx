@@ -18,17 +18,17 @@ export const metadata = { title: "Portfolio" };
 export default function MusicPage() {
   return (
     <div>
-      {/* Hero — aurora backdrop (fixed to the viewport) + waveform */}
-      <section className="relative overflow-hidden border-b border-[var(--border)]">
+      {/* Page-wide fixed backdrop — the aurora stays semi-visible as you scroll */}
+      <div aria-hidden className="pointer-events-none fixed inset-0 -z-10">
         <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 bg-cover bg-center bg-fixed opacity-65"
+          className="absolute inset-0 bg-cover bg-center opacity-65"
           style={{ backgroundImage: "url(/aurora.jpg)" }}
         />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background/30 via-background/55 to-background"
-        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/55 to-background/85" />
+      </div>
+
+      {/* Hero + waveform */}
+      <section className="relative overflow-hidden border-b border-[var(--border)]">
         <div className="relative mx-auto max-w-6xl px-6 py-20 sm:py-28">
           <Reveal>
             <div className="flex items-center gap-4 mb-5">

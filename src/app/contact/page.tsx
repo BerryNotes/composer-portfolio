@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { SITE } from "@/lib/site";
 import { Reveal } from "@/components/Reveal";
 
@@ -7,21 +6,17 @@ export const metadata = { title: "Contact" };
 export default function ContactPage() {
   return (
     <div>
-      {/* Hero band with the night landscape */}
-      <section className="relative overflow-hidden border-b border-[var(--border)]">
-        <Image
-          src="/backdrop-night.jpg"
-          alt=""
-          aria-hidden
-          fill
-          sizes="100vw"
-          className="pointer-events-none object-cover opacity-65"
-          priority
-        />
+      {/* Page-wide fixed backdrop — the night sky stays visible as you scroll */}
+      <div aria-hidden className="pointer-events-none fixed inset-0 -z-10">
         <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background"
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url(/backdrop-night.jpg)" }}
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/30 to-background/85" />
+      </div>
+
+      {/* Hero band */}
+      <section className="relative overflow-hidden border-b border-[var(--border)]">
         <div className="relative mx-auto max-w-3xl px-6 py-24 sm:py-32">
           <Reveal>
             <p className="text-sm uppercase tracking-[0.2em] text-[var(--rose)] mb-3">
