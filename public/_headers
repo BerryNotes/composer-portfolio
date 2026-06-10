@@ -1,0 +1,6 @@
+# Next's static export emits these metadata images without file extensions;
+# tell Cloudflare Pages their real content types so social scrapers accept them.
+/opengraph-image
+  Content-Type: image/png
+/icon
+  Content-Type: image/png

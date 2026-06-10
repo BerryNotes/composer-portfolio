@@ -1,14 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  async redirects() {
-    // The three game-jam projects were consolidated into /work/game-jams.
-    // These slugs were live for a while and may be linked or indexed.
-    return ["magical-sneky", "parts-inc", "critter-catcher"].map((slug) => ({
-      source: `/work/${slug}`,
-      destination: "/work/game-jams",
-      permanent: true,
-    }));
+  // Static export for Cloudflare Pages (petervasilik.pages.dev).
+  // Redirects live in public/_redirects (Cloudflare Pages format) since
+  // next.config redirects don't apply to exported sites.
+  output: "export",
+  images: {
+    // Assets in public/ are pre-optimized by hand; no runtime optimizer
+    // exists on a static host.
+    unoptimized: true,
   },
 };
 

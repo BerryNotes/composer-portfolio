@@ -4,5 +4,5 @@ export const SITE = {
   email: "peter.vasilik@gmail.com",
   spotifyArtistUrl:
     "https://open.spotify.com/artist/2jJghoeA1TrjnflUJD4esO",
-  domain: "composer-portfolio-one.vercel.app",
+  domain: "peter-vasilik.pages.dev",
 };
