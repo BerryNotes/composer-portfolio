@@ -8,7 +8,6 @@ import {
   ACCENT_VARS,
   ACCENT_GLOW_VARS,
 } from "@/lib/music";
-import { SITE } from "@/lib/site";
 import { SpotifyEmbed } from "@/components/SpotifyEmbed";
 import { AudioPlayer } from "@/components/AudioPlayer";
 import { Reveal } from "@/components/Reveal";
@@ -34,20 +33,20 @@ export default function MusicPage() {
           <Reveal>
             <div className="flex items-center gap-4 mb-5">
               <p className="text-sm uppercase tracking-[0.2em] text-[var(--teal)]">
-                Listen
+                Listen!
               </p>
               <Waveform bars={20} className="h-5" color="var(--teal)" />
             </div>
           </Reveal>
           <Reveal delay={80}>
             <h1 className="font-display text-5xl sm:text-6xl tracking-tight max-w-3xl">
-              Press play.
+              Portfolio
             </h1>
           </Reveal>
           <Reveal delay={180}>
             <p className="mt-6 max-w-2xl text-lg text-foreground/70 leading-relaxed">
-              Featured tracks by category are below — each one plays inline.
-              The full albums and complete discography follow.
+              Dive in! Featured tracks by category, full albums, and the
+              complete catalog — all playable right here.
             </p>
           </Reveal>
         </div>
@@ -64,11 +63,11 @@ export default function MusicPage() {
               <Waveform bars={18} className="h-5" color="var(--amber)" />
             </div>
             <h2 className="font-display text-3xl sm:text-4xl tracking-tight mb-2">
-              Hand-picked, in full.
+              Hand-picked, in full!
             </h2>
             <p className="text-foreground/60 max-w-xl mb-8">
-              A short set of complete tracks, hosted here and ready to play —
-              no preview cutoffs. Press play on any one.
+              A set of complete tracks, hosted right here and ready to go — no
+              preview cutoffs. Hit play on any one!
             </p>
           </Reveal>
           <Reveal delay={120}>
@@ -89,11 +88,11 @@ export default function MusicPage() {
               Featured
             </p>
             <h2 className="font-display text-3xl sm:text-4xl tracking-tight mb-2">
-              Start by sound.
+              Start by sound!
             </h2>
             <p className="text-foreground/60 max-w-xl">
-              Selected tracks from each side of the catalog. The labels reflect
-              the sound, not strict genre. Hit play on any of them.
+              Favorites from each side of the catalog — the labels reflect the
+              sound, not strict genre. Hit play on any of them!
             </p>
           </Reveal>
 
@@ -145,10 +144,10 @@ export default function MusicPage() {
               Albums
             </p>
             <h2 className="font-display text-3xl sm:text-4xl tracking-tight mb-2">
-              Full records.
+              Full records!
             </h2>
             <p className="text-foreground/60 max-w-xl mb-10">
-              The albums and EPs in full — press play on any of them.
+              Every album and EP in full — press play on any of them!
             </p>
           </Reveal>
           <div className="grid gap-4 sm:grid-cols-2">
@@ -161,58 +160,27 @@ export default function MusicPage() {
         </div>
       </section>
 
-      {/* Discography list */}
+      {/* Discography list — compact, set to the side */}
       <section className="border-b border-[var(--border)]">
-        <div className="mx-auto max-w-6xl px-6 py-20 sm:py-24">
-          <Reveal>
-            <p className="text-sm uppercase tracking-[0.2em] text-[var(--amber)] mb-3">
-              Discography
-            </p>
-            <h2 className="font-display text-3xl sm:text-4xl tracking-tight">
-              The complete catalog.
-            </h2>
-          </Reveal>
-
-          <ul className="mt-10 divide-y divide-[var(--border)] border-y border-[var(--border)]">
-            {RELEASES.map((r, i) => (
-              <Reveal as="li" key={`${r.title}-${r.year}`} delay={i * 25}>
-                <ReleaseRow release={r} index={i} />
-              </Reveal>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* Everything */}
-      <section className="border-b border-[var(--border)]">
-        <div className="mx-auto max-w-4xl px-6 py-20 sm:py-24">
-          <Reveal>
-            <div className="flex items-center gap-4 mb-3">
-              <p className="text-sm uppercase tracking-[0.2em] text-[var(--teal)]">
-                Or simply listen
+        <div className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
+          <div className="max-w-sm sm:ml-auto">
+            <Reveal>
+              <p className="text-xs uppercase tracking-[0.2em] text-[var(--amber)] mb-2">
+                Discography
               </p>
-              <Waveform bars={16} className="h-4" color="var(--rose)" />
-            </div>
-            <h2 className="font-display text-3xl sm:text-4xl tracking-tight mb-8">
-              The whole catalog, in one place.
-            </h2>
-            <SpotifyEmbed
-              type="artist"
-              id={SITE.spotifyArtistUrl.split("/").pop() || ""}
-            />
-            <p className="mt-6 text-sm text-foreground/50">
-              Also available on{" "}
-              <Link
-                href="https://www.youtube.com/channel/UCkHfGiD8iH3_QfKJGruB44w"
-                className="text-foreground/70 hover:text-[var(--teal)] underline-grow"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                YouTube as Berrynote
-              </Link>
-              .
-            </p>
-          </Reveal>
+              <h2 className="font-display text-2xl tracking-tight">
+                The complete catalog!
+              </h2>
+            </Reveal>
+
+            <ul className="mt-6 divide-y divide-[var(--border)] border-y border-[var(--border)]">
+              {RELEASES.map((r, i) => (
+                <Reveal as="li" key={`${r.title}-${r.year}`} delay={i * 20}>
+                  <ReleaseRow release={r} />
+                </Reveal>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
     </div>
@@ -260,13 +228,7 @@ function CategoryBlock({ cat }: { cat: (typeof FEATURED)[number] }) {
   );
 }
 
-function ReleaseRow({
-  release,
-  index,
-}: {
-  release: (typeof RELEASES)[number];
-  index: number;
-}) {
+function ReleaseRow({ release }: { release: (typeof RELEASES)[number] }) {
   const kindAccent =
     release.kind === "Album"
       ? "var(--amber)"
@@ -274,25 +236,22 @@ function ReleaseRow({
       ? "var(--rose)"
       : "var(--indigo)";
   const inner = (
-    <div className="grid grid-cols-12 gap-4 items-baseline py-5 group hover:bg-[var(--muted-bg)] -mx-6 px-6 transition relative">
+    <div className="flex items-baseline gap-3 py-2 group hover:bg-[var(--muted-bg)] -mx-3 px-3 transition relative">
       <span
         aria-hidden
         className="absolute left-0 top-0 bottom-0 w-px origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-500"
         style={{ background: kindAccent }}
       />
-      <span className="col-span-2 sm:col-span-1 text-xs text-foreground/40 tabular-nums">
-        {String(index + 1).padStart(2, "0")}
-      </span>
-      <span className="col-span-6 sm:col-span-6 font-display text-xl tracking-tight transition-transform duration-500 group-hover:translate-x-1">
+      <span className="flex-1 text-sm tracking-tight text-foreground/80 transition-transform duration-500 group-hover:translate-x-1 group-hover:text-foreground">
         {release.title}
       </span>
       <span
-        className="hidden sm:block sm:col-span-2 text-xs uppercase tracking-[0.18em]"
+        className="text-[10px] uppercase tracking-[0.16em] shrink-0"
         style={{ color: kindAccent }}
       >
         {release.kind}
       </span>
-      <span className="col-span-4 sm:col-span-3 text-sm text-foreground/50 text-right tabular-nums">
+      <span className="text-xs text-foreground/40 tabular-nums shrink-0 w-9 text-right">
         {release.year}
       </span>
     </div>

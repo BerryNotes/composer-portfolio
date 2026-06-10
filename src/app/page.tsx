@@ -34,24 +34,10 @@ export default function HomePage() {
           }}
         />
         <div className="relative mx-auto max-w-6xl px-6 pt-32 pb-32 sm:pt-40 sm:pb-44">
-          <Reveal>
-            <p className="text-sm uppercase tracking-[0.2em] text-[var(--teal)] mb-6">
-              Composer · Austin, TX
-            </p>
-          </Reveal>
           <Reveal delay={80}>
-            <h1 className="font-display text-5xl sm:text-7xl leading-[1.02] tracking-tight max-w-4xl">
-              I write music
-              <br />
-              that earns its place.
+            <h1 className="font-display text-6xl sm:text-8xl leading-[1.02] tracking-tight max-w-4xl">
+              {SITE.name}
             </h1>
-          </Reveal>
-          <Reveal delay={180}>
-            <p className="mt-8 max-w-2xl text-lg text-foreground/70 leading-relaxed">
-              {SITE.name}. Composer for film, television, games, and select
-              artist records. If you are developing a project that needs a
-              score, please get in touch.
-            </p>
           </Reveal>
           <Reveal delay={260}>
             <div className="mt-10 flex flex-wrap items-center gap-3">
@@ -59,14 +45,14 @@ export default function HomePage() {
                 href="#work"
                 className="group inline-flex items-center gap-2 rounded-full bg-foreground text-background px-5 py-2.5 text-sm font-medium hover:opacity-90 transition"
               >
-                See the work
+                See the work!
                 <ArrowRight />
               </Link>
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] px-5 py-2.5 text-sm font-medium hover:border-[var(--teal)] hover:text-[var(--teal)] transition"
               >
-                Get in touch
+                Get in touch!
               </Link>
             </div>
           </Reveal>

@@ -24,11 +24,13 @@ Subtitle: A self-taught composer for film, games, theater, and the occasional ar
 
 === BODY ===
 
-It started in 2016, with nothing grander than a desire to learn the piano; YouTube tutorials and a great deal of listening did the rest, and by 2020 the songs I had been writing for myself had become songs I was releasing for other people. I have been self-taught the whole way through — which means the habits I carry are the ones the music asked for, and not the ones a classroom handed me.
+I began playing the piano in 2016, learning from YouTube tutorials and a great deal of listening. By 2020 the songs I had been writing for myself had become songs I was releasing for other people. I have been self-taught the entire time — which means the creativity I have is my own, rather than something given to me.
 
-When a project comes to me, I do not begin from technique, or from anything I have written before. I begin by picturing the thing itself, and asking the only question that matters at the start — what is this supposed to make a person feel? — and then I improvise toward that feeling until it holds. Improvisation is the part of the craft I trust most; it is the difference between reading a map and walking the ground. What comes out of that is a wide catalog: solo piano and ambient textures on one end, small-ensemble orchestral cues and jazz reharmonization on the other, and, off to the side, a series of pieces composed inside a graphing calculator. The range is not an accident. Each project gets the sound it actually needs, and not the one I would have defaulted to.
+When I join a project, I ask only one question; what is this supposed to make a person feel? And by this process I cultivate that feeling in my work so that the emotion that is required is created in the song.
 
-For the people I work with, that restlessness comes with discipline. I make my decisions inside the guidelines I am given, and I bring everything creative I can without ever stepping outside the bounds of the project; a score, after all, should sound as though it could only ever have been written for the one thing it serves. The work I want most is the music for a small indie game with a tragic story — the kind of project where the feeling is the whole point — but if you are building anything at all that needs a score, I would be glad to hear about it.
+For the people I work with, that restlessness comes with discipline. I make my decisions inside the guidelines I am given, and I bring everything creative I can without ever stepping outside the bounds of the project.
+
+The project that I want to work on the more would be for a small indie game with a tragic story — but if you are building anything at all that needs a score, I would be glad to hear about it.
 
 === FACTS ===
 
