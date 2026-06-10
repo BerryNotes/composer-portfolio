@@ -13,7 +13,7 @@ import { AudioPlayer } from "@/components/AudioPlayer";
 import { Reveal } from "@/components/Reveal";
 import { Waveform } from "@/components/Waveform";
 
-export const metadata = { title: "Music" };
+export const metadata = { title: "Portfolio" };
 
 export default function MusicPage() {
   return (
