@@ -39,6 +39,14 @@ export default function HomePage() {
               {SITE.name}
             </h1>
           </Reveal>
+          <Reveal delay={180}>
+            <p className="mt-8 max-w-2xl text-lg text-foreground/80 leading-relaxed">
+              Self-taught composer for indie games, film, and theater — equal
+              parts restless experimenter and disciplined collaborator. If
+              your project needs a score that actually fits, tell me the
+              feeling and I&apos;ll write toward it!
+            </p>
+          </Reveal>
           <Reveal delay={260}>
             <div className="mt-10 flex flex-wrap items-center gap-3">
               <Link
