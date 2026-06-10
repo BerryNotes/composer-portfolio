@@ -34,23 +34,25 @@ export const FEATURED_AUDIO: AudioTrack[] = [
   { title: "3.4", src: "/audio/untitled-34.mp3", duration: "2:02" },
 ];
 
-// ---- Three tracks pulled up for the home page (most-played / best entry points) ----
+// ---- Featured picks for the home page (hand-chosen from the catalog) ----
 export const HOME_TRACKS: FeaturedTrack[] = [
-  {
-    title: "Reflecting on Life",
-    spotifyTrackId: "1lDfdawaPGcLRgs23wXhNY",
-    note: "The most-played piece in the catalog.",
-  },
-  {
-    title: "I Thought It Was Real",
-    spotifyTrackId: "1ezjgiD2AQPkAPTGRvffQg",
-    note: "From the harmony-and-jazz side of the catalog.",
-  },
-  {
-    title: "Nostalgia",
-    spotifyTrackId: "1C1W1BtUlCZGN8S87rwDhM",
-    note: "Solo piano.",
-  },
+  { title: "Water's Mist", spotifyTrackId: "32VX116l1xPhIqs8zEgOx4" },
+  { title: "Rouick", spotifyTrackId: "6l9HadzdXz6CBjB7Ctv2ys" },
+  { title: "Games of Language", spotifyTrackId: "10bu7GMzpBKKnbTTzpkYKW" },
+  { title: "Friendship Is Magic", spotifyTrackId: "4YTPdnKcJUYvtaVYT0yUxo" },
+  { title: "Deciduous Daydream", spotifyTrackId: "32kVg4QvAKFQ1aYTwIZFNp" },
+  { title: "C4 H10 F O2 P", spotifyTrackId: "5BaJCGweZpZP0JFOmUt60y" },
+  { title: "Emptiness Pt. 3", spotifyTrackId: "04eCpMVToIGNlRQQJ9elQ8" },
+  { title: "The Leaves Are Changing...", spotifyTrackId: "5B5SIiukWLJAzJ4fOgJscZ" },
+  { title: "Sleeping Forever", spotifyTrackId: "0cpUc2uxhdTNtxnny6ISvs" },
+  { title: "Last One", spotifyTrackId: "3lS6mKaNZZn8ZGqqvOx09h" },
+  { title: "Reflecting on Life", spotifyTrackId: "1lDfdawaPGcLRgs23wXhNY" },
+  { title: "Moonlight Waltz", spotifyTrackId: "0pTuYm4I2SwbFUSF2ohuNJ" },
+];
+
+// Hosted full track featured alongside the picks (not on streaming).
+export const HOME_HOSTED: AudioTrack[] = [
+  { title: "Lasier", src: "/audio/lasier.mp3", duration: "2:45" },
 ];
 
 // ---- Featured picks, organized by sound (all playable) ----

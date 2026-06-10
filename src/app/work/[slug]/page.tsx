@@ -94,8 +94,17 @@ export default async function ProjectPage(props: PageProps<"/work/[slug]">) {
             </p>
           </Reveal>
 
-          {project.gallery && project.gallery.length > 0 && (
+          {project.tracks && project.tracks.length > 0 && (
             <Reveal as="section" delay={200}>
+              <h2 className="text-sm uppercase tracking-[0.2em] text-[var(--teal)] mb-4">
+                Listen!
+              </h2>
+              <AudioPlayer tracks={project.tracks} />
+            </Reveal>
+          )}
+
+          {project.gallery && project.gallery.length > 0 && (
+            <Reveal as="section" delay={240}>
               <h2 className="text-sm uppercase tracking-[0.2em] text-foreground/50 mb-4">
                 Gallery
               </h2>
@@ -115,15 +124,6 @@ export default async function ProjectPage(props: PageProps<"/work/[slug]">) {
                   </div>
                 ))}
               </div>
-            </Reveal>
-          )}
-
-          {project.tracks && project.tracks.length > 0 && (
-            <Reveal as="section" delay={220}>
-              <h2 className="text-sm uppercase tracking-[0.2em] text-foreground/50 mb-4">
-                Tracks
-              </h2>
-              <AudioPlayer tracks={project.tracks} />
             </Reveal>
           )}
 

@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { PROJECTS } from "@/lib/projects";
-import { HOME_TRACKS } from "@/lib/music";
+import { HOME_TRACKS, HOME_HOSTED } from "@/lib/music";
 import { SITE } from "@/lib/site";
 import { Reveal } from "@/components/Reveal";
 import { Waveform } from "@/components/Waveform";
 import { SpotifyEmbed } from "@/components/SpotifyEmbed";
+import { AudioPlayer } from "@/components/AudioPlayer";
 
 export default function HomePage() {
   const featured = PROJECTS.slice(0, 3);
@@ -59,7 +60,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Listen — playable tracks */}
+      {/* Featured — the picks */}
       <section className="border-t border-[var(--border)] relative">
         <div
           aria-hidden
@@ -71,12 +72,12 @@ export default function HomePage() {
               <div>
                 <div className="flex items-center gap-4 mb-3">
                   <p className="text-sm uppercase tracking-[0.2em] text-[var(--teal)]">
-                    Listen
+                    Listen!
                   </p>
                   <Waveform bars={18} className="h-5" color="var(--teal)" />
                 </div>
                 <h2 className="font-display text-3xl sm:text-4xl tracking-tight">
-                  A few to start with.
+                  Featured!
                 </h2>
               </div>
               <Link
@@ -87,15 +88,23 @@ export default function HomePage() {
               </Link>
             </div>
           </Reveal>
+
+          {/* Lasier — hosted exclusive, leads the section */}
+          {HOME_HOSTED.length > 0 && (
+            <Reveal>
+              <div className="mb-6">
+                <p className="text-xs uppercase tracking-[0.18em] text-[var(--amber)] mb-2">
+                  Exclusive — only here!
+                </p>
+                <AudioPlayer tracks={HOME_HOSTED} />
+              </div>
+            </Reveal>
+          )}
+
           <div className="grid gap-4 sm:grid-cols-3 items-start">
             {HOME_TRACKS.map((t, i) => (
-              <Reveal key={t.spotifyTrackId} delay={i * 90}>
-                <div className="space-y-2">
-                  <SpotifyEmbed type="track" id={t.spotifyTrackId} compact />
-                  {t.note && (
-                    <p className="text-xs text-foreground/50 px-1">{t.note}</p>
-                  )}
-                </div>
+              <Reveal key={t.spotifyTrackId} delay={(i % 3) * 80}>
+                <SpotifyEmbed type="track" id={t.spotifyTrackId} compact />
               </Reveal>
             ))}
           </div>

@@ -62,6 +62,11 @@ export const PROJECTS: Project[] = [
       "Original score and a custom web-based cue system for UATX's production of Hamlet. Two performances, approximately 150 in attendance per night.",
     description:
       "A traditional staging of Hamlet directed by London at UATX. I composed the full incidental score — five cues spanning the production, with the Ophelia songs and the court song as the centerpieces. Playback was pre-recorded rather than live, requiring each cue to stand on its own and trigger cleanly against the performances.\n\nIn place of off-the-shelf show-control software, I built the playback system itself: a small web application that allowed the stage manager to drive cues from a laptop on a single keypress. Composer and operator on alternating nights — an arrangement that kept iteration tight, since a cue underperforming in technical rehearsal could be re-mixed and redeployed the same evening.\n\nTwo performances, approximately 150 in attendance per night.",
+    tracks: [
+      { title: "Court", src: "/audio/hamlet-1.mp3", duration: "1:00" },
+      { title: "Funeral", src: "/audio/hamlet-2.mp3", duration: "1:07" },
+      { title: "Ophelia", src: "/audio/hamlet-3.mp3", duration: "0:44" },
+    ],
     links: [
       {
         label: "Show-control repo",
@@ -80,6 +85,12 @@ export const PROJECTS: Project[] = [
       { src: "/projects/magical-sneky.jpg", alt: "Magical Sneky gameplay" },
       { src: "/projects/parts-inc.jpg", alt: "Parts Inc. gameplay" },
       { src: "/projects/critter-catcher.jpg", alt: "Critter Catcher title art" },
+    ],
+    tracks: [
+      { title: "Pause Menu", src: "/audio/gamejam-1.mp3", duration: "0:34" },
+      { title: "Shard Dungeon", src: "/audio/gamejam-2.mp3", duration: "3:49" },
+      { title: "Title", src: "/audio/gamejam-3.mp3", duration: "2:06" },
+      { title: "Unity", src: "/audio/gamejam-4.mp3", duration: "0:32" },
     ],
     summary:
       "Original scores and sound design for three indie game-jam entries across three years — calm ambient, small-ensemble orchestral, and electronic-ambient.",
