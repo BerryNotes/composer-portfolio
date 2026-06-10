@@ -41,7 +41,7 @@ export const PROJECTS: Project[] = [
     summary:
       "An ongoing YouTube channel of original instrumental works — piano pieces, synth compositions, and arrangements. Approximately 19,000 subscribers.",
     description:
-      "Berrynote is the YouTube channel I have been releasing original work on since 2022. The catalog rotates between synth pieces, piano arrangements, and short instrumental sketches — each one written, performed, recorded, and mixed in-house. The channel has grown to approximately nineteen thousand subscribers.\n\nThe work has had a second life as a small stock library. Several pieces have been licensed by video creators as background music, and the channel has produced a steady stream of commission work — short cues, intros, and mood pieces — placed through Fiverr.",
+      "My YouTube channel since 2022 — synth pieces, piano arrangements, and instrumental sketches, all written, performed, and mixed in-house, now at roughly nineteen thousand subscribers. Several pieces have been licensed by video creators, and it has driven steady commission work through Fiverr.",
     spotifyArtistId: "2jJghoeA1TrjnflUJD4esO",
     links: [
       {
@@ -61,7 +61,7 @@ export const PROJECTS: Project[] = [
     summary:
       "Original score and a custom web-based cue system for UATX's production of Hamlet. Two performances, approximately 150 in attendance per night.",
     description:
-      "A traditional staging of Hamlet directed by London at UATX. I composed the full incidental score — five cues spanning the production, with the Ophelia songs and the court song as the centerpieces. Playback was pre-recorded rather than live, requiring each cue to stand on its own and trigger cleanly against the performances.\n\nIn place of off-the-shelf show-control software, I built the playback system itself: a small web application that allowed the stage manager to drive cues from a laptop on a single keypress. Composer and operator on alternating nights — an arrangement that kept iteration tight, since a cue underperforming in technical rehearsal could be re-mixed and redeployed the same evening.\n\nTwo performances, approximately 150 in attendance per night.",
+      "A traditional staging of Hamlet at UATX, directed by London. I composed the full incidental score — five pre-recorded cues, with the Ophelia songs and the court song at its center — and built the show-control system that fired them: a small web app the stage manager drove from a laptop. Two performances, roughly 150 in attendance each night.",
     tracks: [
       { title: "Court", src: "/audio/hamlet-1.mp3", duration: "1:00" },
       { title: "Funeral", src: "/audio/hamlet-2.mp3", duration: "1:07" },
@@ -95,7 +95,7 @@ export const PROJECTS: Project[] = [
     summary:
       "Original scores and sound design for three indie game-jam entries across three years — calm ambient, small-ensemble orchestral, and electronic-ambient.",
     description:
-      "Three jam projects across three years, each scoped to the constraints of its event and each requiring a distinct musical palette. Linked itch.io pages are at the bottom of this page.\n\nMagical Sneky (2026, Metroidvania Month 31 × Magical Girl Game Jam 13). A short magical-girl metroidvania. Score co-written with Tricky Ethan; the brief was calm ambient — soft pads and slow movement designed to support precision platforming without competing with it. I also handled the SFX pass.\n\nParts Inc. (2025, VR Jam 7). A VR action game with a dark-comic loop: dismember goblins, sell the parts, upgrade. Sole composer. The score is orchestral, brass and percussion forward, written to take the violence seriously enough to be satisfying without tipping into horror. Combat, menu, and selling SFX written in-house.\n\nCritter Catcher (2023, Bear Jams Spring 2023). A submarine exploration game centered on collecting deep-sea specimens. Sole composer. Electronic and ambient — slow pads, sub-bass, sparse melodic motifs — built to support the loneliness of solo deep-sea work. The intro cue establishes the tone before the player has acted.",
+      "Three game-jam scores across three years, each with its own palette (itch.io links below).\n\nMagical Sneky (2026) — a magical-girl metroidvania; calm ambient, co-written with Tricky Ethan, plus the SFX pass.\n\nParts Inc. (2025) — a dark-comic VR action game; brass-and-percussion orchestral, sole composer, all SFX in-house.\n\nCritter Catcher (2023) — a submarine exploration game; electronic-ambient, sole composer, built around the loneliness of the deep.",
     links: [
       {
         label: "Magical Sneky on itch.io",

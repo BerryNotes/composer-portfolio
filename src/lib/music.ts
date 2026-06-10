@@ -34,25 +34,49 @@ export const FEATURED_AUDIO: AudioTrack[] = [
   { title: "3.4", src: "/audio/untitled-34.mp3", duration: "2:02" },
 ];
 
-// ---- Featured picks for the home page (hand-chosen from the catalog) ----
-export const HOME_TRACKS: FeaturedTrack[] = [
-  { title: "Water's Mist", spotifyTrackId: "32VX116l1xPhIqs8zEgOx4" },
-  { title: "Rouick", spotifyTrackId: "6l9HadzdXz6CBjB7Ctv2ys" },
-  { title: "Games of Language", spotifyTrackId: "10bu7GMzpBKKnbTTzpkYKW" },
-  { title: "Friendship Is Magic", spotifyTrackId: "4YTPdnKcJUYvtaVYT0yUxo" },
-  { title: "Deciduous Daydream", spotifyTrackId: "32kVg4QvAKFQ1aYTwIZFNp" },
-  { title: "C4 H10 F O2 P", spotifyTrackId: "5BaJCGweZpZP0JFOmUt60y" },
-  { title: "Emptiness Pt. 3", spotifyTrackId: "04eCpMVToIGNlRQQJ9elQ8" },
-  { title: "The Leaves Are Changing...", spotifyTrackId: "5B5SIiukWLJAzJ4fOgJscZ" },
-  { title: "Sleeping Forever", spotifyTrackId: "0cpUc2uxhdTNtxnny6ISvs" },
-  { title: "Last One", spotifyTrackId: "3lS6mKaNZZn8ZGqqvOx09h" },
-  { title: "Reflecting on Life", spotifyTrackId: "1lDfdawaPGcLRgs23wXhNY" },
-  { title: "Moonlight Waltz", spotifyTrackId: "0pTuYm4I2SwbFUSF2ohuNJ" },
-];
+// ---- Featured songs for the home page, grouped by genre ----
+// An item is either a Spotify track (spotifyTrackId) or a hosted file (src).
+export type FeaturedItem = {
+  title: string;
+  spotifyTrackId?: string;
+  src?: string;
+  duration?: string;
+};
+export type FeaturedGroup = {
+  label: string;
+  accent: AccentKey;
+  items: FeaturedItem[];
+};
 
-// Hosted full track featured alongside the picks (not on streaming).
-export const HOME_HOSTED: AudioTrack[] = [
-  { title: "Lasier", src: "/audio/lasier.mp3", duration: "2:45" },
+export const HOME_FEATURED: FeaturedGroup[] = [
+  {
+    label: "Electronic",
+    accent: "teal",
+    items: [
+      { title: "Games of Language", spotifyTrackId: "10bu7GMzpBKKnbTTzpkYKW" },
+      { title: "Lasier", src: "/audio/lasier.mp3", duration: "2:45" },
+      { title: "Deciduous Daydream", spotifyTrackId: "32kVg4QvAKFQ1aYTwIZFNp" },
+    ],
+  },
+  {
+    label: "Ambient",
+    accent: "indigo",
+    items: [
+      { title: "Water's Mist", spotifyTrackId: "32VX116l1xPhIqs8zEgOx4" },
+      { title: "Friendship Is Magic", spotifyTrackId: "4YTPdnKcJUYvtaVYT0yUxo" },
+      { title: "Last One", spotifyTrackId: "3lS6mKaNZZn8ZGqqvOx09h" },
+    ],
+  },
+  {
+    label: "Classical",
+    accent: "amber",
+    items: [
+      { title: "Rouick", spotifyTrackId: "6l9HadzdXz6CBjB7Ctv2ys" },
+      { title: "The Leaves Are Changing...", spotifyTrackId: "5B5SIiukWLJAzJ4fOgJscZ" },
+      { title: "Reflecting on Life", spotifyTrackId: "1lDfdawaPGcLRgs23wXhNY" },
+      { title: "Moonlight Waltz", spotifyTrackId: "0pTuYm4I2SwbFUSF2ohuNJ" },
+    ],
+  },
 ];
 
 // ---- Featured picks, organized by sound (all playable) ----

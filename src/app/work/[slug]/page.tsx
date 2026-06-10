@@ -96,9 +96,12 @@ export default async function ProjectPage(props: PageProps<"/work/[slug]">) {
 
           {project.tracks && project.tracks.length > 0 && (
             <Reveal as="section" delay={200}>
-              <h2 className="text-sm uppercase tracking-[0.2em] text-[var(--teal)] mb-4">
+              <h2 className="text-sm uppercase tracking-[0.2em] text-[var(--teal)] mb-1">
                 Listen!
               </h2>
+              <p className="text-sm text-foreground/50 mb-4">
+                Just a few favorites — not the full score.
+              </p>
               <AudioPlayer tracks={project.tracks} />
             </Reveal>
           )}

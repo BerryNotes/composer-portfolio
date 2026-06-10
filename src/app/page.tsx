@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { PROJECTS } from "@/lib/projects";
-import { HOME_TRACKS, HOME_HOSTED } from "@/lib/music";
+import { HOME_FEATURED, ACCENT_VARS } from "@/lib/music";
 import { SITE } from "@/lib/site";
 import { Reveal } from "@/components/Reveal";
 import { Waveform } from "@/components/Waveform";
@@ -60,65 +60,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured — the picks */}
-      <section className="border-t border-[var(--border)] relative">
-        <div
-          aria-hidden
-          className="absolute inset-0 texture-dots opacity-40 pointer-events-none"
-        />
-        <div className="relative mx-auto max-w-6xl px-6 py-24 sm:py-32">
-          <Reveal>
-            <div className="flex items-end justify-between mb-10 gap-4">
-              <div>
-                <div className="flex items-center gap-4 mb-3">
-                  <p className="text-sm uppercase tracking-[0.2em] text-[var(--teal)]">
-                    Listen!
-                  </p>
-                  <Waveform bars={18} className="h-5" color="var(--teal)" />
-                </div>
-                <h2 className="font-display text-3xl sm:text-4xl tracking-tight">
-                  Featured!
-                </h2>
-              </div>
-              <Link
-                href="/music"
-                className="hidden sm:inline-flex items-center gap-1 text-sm text-foreground/70 hover:text-[var(--teal)] transition"
-              >
-                All music <ArrowRight />
-              </Link>
-            </div>
-          </Reveal>
-
-          {/* Lasier — hosted exclusive, leads the section */}
-          {HOME_HOSTED.length > 0 && (
-            <Reveal>
-              <div className="mb-6">
-                <p className="text-xs uppercase tracking-[0.18em] text-[var(--amber)] mb-2">
-                  Exclusive — only here!
-                </p>
-                <AudioPlayer tracks={HOME_HOSTED} />
-              </div>
-            </Reveal>
-          )}
-
-          <div className="grid gap-4 sm:grid-cols-3 items-start">
-            {HOME_TRACKS.map((t, i) => (
-              <Reveal key={t.spotifyTrackId} delay={(i % 3) * 80}>
-                <SpotifyEmbed type="track" id={t.spotifyTrackId} compact />
-              </Reveal>
-            ))}
-          </div>
-          <Reveal>
-            <Link
-              href="/music"
-              className="sm:hidden mt-8 inline-flex items-center gap-1 text-sm text-foreground/70 hover:text-[var(--teal)] transition"
-            >
-              All music <ArrowRight />
-            </Link>
-          </Reveal>
-        </div>
-      </section>
-
       <section className="border-t border-[var(--border)]">
         <div className="mx-auto max-w-6xl px-6 py-24 sm:py-32">
           <Reveal>
@@ -134,9 +75,9 @@ export default function HomePage() {
                 </h2>
               </div>
               <p className="sm:col-span-7 sm:col-start-6 text-foreground/70 text-lg leading-relaxed">
-                Each engagement begins with a conversation about the work,
-                its tone, and what has already been tried. Everything that
-                follows is built on that.
+                Every project starts with a real conversation — the work, the
+                feeling it needs, and what has already been tried. Everything
+                that follows is built on that!
               </p>
             </div>
           </Reveal>
@@ -225,6 +166,78 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Featured — moved down, led by a short description */}
+      <section className="border-t border-[var(--border)] relative">
+        <div
+          aria-hidden
+          className="absolute inset-0 texture-dots opacity-40 pointer-events-none"
+        />
+        <div className="relative mx-auto max-w-6xl px-6 py-24 sm:py-32">
+          <Reveal>
+            <div className="flex items-center gap-4 mb-3">
+              <p className="text-sm uppercase tracking-[0.2em] text-[var(--teal)]">
+                Listen!
+              </p>
+              <Waveform bars={18} className="h-5" color="var(--teal)" />
+            </div>
+            <h2 className="font-display text-3xl sm:text-4xl tracking-tight mb-5">
+              Featured!
+            </h2>
+            <p className="max-w-2xl text-lg text-foreground/70 leading-relaxed">
+              I&apos;m {SITE.name} — a self-taught composer who starts every
+              project from a single question: what should this make you feel?
+              What I want most is to score a small indie game with a tragic
+              story, but I&apos;d be glad to hear about anything that needs
+              music!
+            </p>
+          </Reveal>
+
+          <div className="mt-12 space-y-12">
+            {HOME_FEATURED.map((group, gi) => (
+              <Reveal key={group.label} delay={gi * 80}>
+                <div>
+                  <div className="flex items-center gap-2 mb-4">
+                    <span
+                      className="h-1.5 w-1.5 rounded-full"
+                      style={{ background: ACCENT_VARS[group.accent] }}
+                    />
+                    <p
+                      className="text-sm uppercase tracking-[0.18em]"
+                      style={{ color: ACCENT_VARS[group.accent] }}
+                    >
+                      {group.label}
+                    </p>
+                  </div>
+                  <div className="grid gap-4 sm:grid-cols-3 items-start">
+                    {group.items.map((item) =>
+                      item.spotifyTrackId ? (
+                        <SpotifyEmbed
+                          key={item.spotifyTrackId}
+                          type="track"
+                          id={item.spotifyTrackId}
+                          compact
+                        />
+                      ) : (
+                        <AudioPlayer key={item.src} tracks={[item]} />
+                      )
+                    )}
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal>
+            <Link
+              href="/music"
+              className="mt-10 inline-flex items-center gap-1 text-sm text-foreground/70 hover:text-[var(--teal)] transition"
+            >
+              All music <ArrowRight />
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+
       <section className="border-t border-[var(--border)] relative overflow-hidden">
         <div
           aria-hidden
@@ -271,22 +284,22 @@ type Service = {
 const SERVICES: Service[] = [
   {
     title: "Original score",
-    body: "Full or partial scores for film, television, and shorts. Spotting, sketching, demos, then live or sample-based recording.",
+    body: "Complete or partial scores for film, television, and shorts — spotting, sketches, demos, then a final recording, live or sampled. Every cue earns its place!",
     icon: <FilmIcon />,
   },
   {
     title: "Game music",
-    body: "Adaptive scores designed around player movement. Vertical layers, horizontal cues, and stems delivered for Wwise or FMOD.",
+    body: "Adaptive scores built around how players actually move — vertical layers, horizontal cues, and clean stems, ready for Wwise or FMOD!",
     icon: <GameIcon />,
   },
   {
     title: "Arranging and orchestration",
-    body: "Strings, brass, and woodwinds. Charts for live ensemble or programmed sessions, delivered as stems and printed parts.",
+    body: "Strings, brass, and woodwinds, charted for live players or programmed sessions and delivered as stems and printed parts. Bring me the melody!",
     icon: <NoteIcon />,
   },
   {
     title: "Collaborations",
-    body: "Songwriting and co-production with artists. I bring instrumentation and a long ear; you bring the song.",
+    body: "Songwriting and co-production with artists — I bring the instrumentation and a long ear, you bring the song. Let's build it together!",
     icon: <CollabIcon />,
   },
 ];
