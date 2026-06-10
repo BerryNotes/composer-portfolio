@@ -22,11 +22,17 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(`https://${SITE.domain}`),
   title: {
     default: `${SITE.name}, Composer`,
     template: `%s · ${SITE.name}`,
   },
   description: SITE.tagline,
+  openGraph: {
+    siteName: SITE.name,
+    type: "website",
+    url: "/",
+  },
 };
 
 export default function RootLayout({

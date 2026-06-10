@@ -21,6 +21,12 @@ export default function NotFound() {
           Home
         </Link>
         <Link
+          href="/music"
+          className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] px-5 py-2.5 text-sm font-medium hover:border-[var(--teal)] hover:text-[var(--teal)] transition"
+        >
+          Music
+        </Link>
+        <Link
           href="/work"
           className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] px-5 py-2.5 text-sm font-medium hover:border-[var(--teal)] hover:text-[var(--teal)] transition"
         >

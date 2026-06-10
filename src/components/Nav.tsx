@@ -19,12 +19,14 @@ export function Nav() {
         >
           {SITE.name}
         </Link>
-        <nav className="flex items-center gap-1 sm:gap-2">
+        <nav className="flex items-center gap-0.5 sm:gap-2">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="rounded-full px-3 py-1.5 text-sm text-foreground/70 transition hover:text-[var(--teal)]"
+              className={`rounded-full px-2.5 sm:px-3 py-1.5 text-sm text-foreground/70 transition hover:text-[var(--teal)] ${
+                link.href === "/" ? "hidden sm:block" : ""
+              }`}
             >
               {link.label}
             </Link>

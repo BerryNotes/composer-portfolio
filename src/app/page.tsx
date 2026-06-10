@@ -36,7 +36,7 @@ export default function HomePage() {
         <div className="relative mx-auto max-w-6xl px-6 pt-32 pb-32 sm:pt-40 sm:pb-44">
           <Reveal>
             <p className="text-sm uppercase tracking-[0.2em] text-[var(--teal)] mb-6">
-              Composer · {SITE.domain}
+              Composer · Austin, TX
             </p>
           </Reveal>
           <Reveal delay={80}>

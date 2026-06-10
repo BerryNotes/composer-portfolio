@@ -60,6 +60,13 @@ function Player({ tracks }: { tracks: Track[] }) {
     };
   }, [current, tracks.length]);
 
+  // Reset the seek bar when the track changes so it doesn't show the
+  // previous track's position while the new one loads.
+  useEffect(() => {
+    setProgress(0);
+    setDuration(0);
+  }, [current]);
+
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;

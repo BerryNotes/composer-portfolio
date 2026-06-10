@@ -22,6 +22,7 @@ export type Project = {
   description: string;
   poster?: string;
   image?: string;
+  gallery?: { src: string; alt: string }[];
   spotifyAlbumId?: string;
   spotifyPlaylistId?: string;
   spotifyArtistId?: string;
@@ -75,6 +76,11 @@ export const PROJECTS: Project[] = [
     year: "2023 – 2026",
     category: "Game",
     image: "/projects/critter-catcher.jpg",
+    gallery: [
+      { src: "/projects/magical-sneky.jpg", alt: "Magical Sneky gameplay" },
+      { src: "/projects/parts-inc.jpg", alt: "Parts Inc. gameplay" },
+      { src: "/projects/critter-catcher.jpg", alt: "Critter Catcher title art" },
+    ],
     summary:
       "Original scores and sound design for three indie game-jam entries across three years — calm ambient, small-ensemble orchestral, and electronic-ambient.",
     description:

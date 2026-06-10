@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PROJECTS, getProject } from "@/lib/projects";
@@ -92,6 +93,30 @@ export default async function ProjectPage(props: PageProps<"/work/[slug]">) {
               {project.description}
             </p>
           </Reveal>
+
+          {project.gallery && project.gallery.length > 0 && (
+            <Reveal as="section" delay={200}>
+              <h2 className="text-sm uppercase tracking-[0.2em] text-foreground/50 mb-4">
+                Gallery
+              </h2>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                {project.gallery.map((g) => (
+                  <div
+                    key={g.src}
+                    className="relative aspect-video overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--muted-bg)]"
+                  >
+                    <Image
+                      src={g.src}
+                      alt={g.alt}
+                      fill
+                      sizes="(max-width: 640px) 50vw, 33vw"
+                      className="object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          )}
 
           {project.tracks && project.tracks.length > 0 && (
             <Reveal as="section" delay={220}>
