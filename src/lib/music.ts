@@ -25,13 +25,19 @@ export type Release = {
 // ---- Featured songs hosted as real audio files (full tracks, press-play) ----
 export type AudioTrack = { title: string; src: string; duration?: string };
 
+// Titles match the released versions on Spotify where they exist;
+// "Autumn Song" is unreleased.
 export const FEATURED_AUDIO: AudioTrack[] = [
   { title: "Autumn Song", src: "/audio/autumn-song.mp3", duration: "2:58" },
   { title: "Water's Mist", src: "/audio/waters-mist.mp3", duration: "5:24" },
-  { title: "Ambiens", src: "/audio/ambiens.mp3", duration: "4:38" },
-  { title: "Thansa", src: "/audio/thansa.mp3", duration: "2:31" },
-  { title: "Chipton", src: "/audio/chipton.mp3", duration: "1:14" },
-  { title: "3.4", src: "/audio/untitled-34.mp3", duration: "2:02" },
+  {
+    title: "Whereof One Cannot Speak Thereof One Must Be Silent",
+    src: "/audio/ambiens.mp3",
+    duration: "4:38",
+  },
+  { title: "The Fibonacci Sequences", src: "/audio/thansa.mp3", duration: "2:31" },
+  { title: "2010 Honda Accord", src: "/audio/chipton.mp3", duration: "1:14" },
+  { title: "Deciduous Daydream", src: "/audio/untitled-34.mp3", duration: "2:02" },
 ];
 
 // ---- Featured songs for the home page, grouped by genre ----
@@ -57,14 +63,14 @@ export const HOME_FEATURED: FeaturedGroup[] = [
     items: [
       { title: "Games of Language", src: "/audio/preview/games-of-language.mp3", duration: "0:27" },
       { title: "Lasier", src: "/audio/lasier.mp3", duration: "2:45" },
-      { title: "Deciduous Daydream", src: "/audio/preview/deciduous-daydream.mp3", duration: "0:17" },
+      { title: "Deciduous Daydream", src: "/audio/untitled-34.mp3", duration: "2:02" },
     ],
   },
   {
     label: "Ambient",
     accent: "indigo",
     items: [
-      { title: "Water's Mist", src: "/audio/preview/waters-mist-sp.mp3", duration: "0:24" },
+      { title: "Water's Mist", src: "/audio/waters-mist.mp3", duration: "5:24" },
       { title: "Friendship Is Magic", src: "/audio/preview/friendship-is-magic.mp3", duration: "0:27" },
       { title: "Last One", src: "/audio/preview/last-one.mp3", duration: "0:29" },
     ],
