@@ -10,6 +10,7 @@ import {
 } from "@/lib/music";
 import { SpotifyEmbed } from "@/components/SpotifyEmbed";
 import { AudioPlayer } from "@/components/AudioPlayer";
+import { Backdrop } from "@/components/Backdrop";
 import { Reveal } from "@/components/Reveal";
 import { Waveform } from "@/components/Waveform";
 
@@ -18,14 +19,8 @@ export const metadata = { title: "Portfolio" };
 export default function MusicPage() {
   return (
     <div>
-      {/* Page-wide fixed backdrop — the aurora stays semi-visible as you scroll */}
-      <div aria-hidden className="pointer-events-none fixed inset-0 -z-10">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-65"
-          style={{ backgroundImage: "url(/aurora.jpg)" }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/55 to-background/85" />
-      </div>
+      {/* Page-wide backdrop — fades to a dimmer floor as you scroll */}
+      <Backdrop image="/aurora.jpg" base={0.65} floor={0.25} />
 
       {/* Hero + waveform */}
       <section className="relative overflow-hidden border-b border-[var(--border)]">

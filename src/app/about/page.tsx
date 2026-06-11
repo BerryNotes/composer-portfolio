@@ -2,6 +2,7 @@ import Image from "next/image";
 import { SITE } from "@/lib/site";
 import { ABOUT } from "@/content/about";
 import { Reveal } from "@/components/Reveal";
+import { Backdrop } from "@/components/Backdrop";
 
 export const metadata = { title: "About" };
 
@@ -9,14 +10,13 @@ export default function AboutPage() {
   const heading = ABOUT.heading.replace("{name}", SITE.name);
   return (
     <div>
-      {/* Page-wide fixed backdrop — the aurora stays semi-visible as you scroll */}
-      <div aria-hidden className="pointer-events-none fixed inset-0 -z-10">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-70"
-          style={{ backgroundImage: "url(/aurora.jpg)" }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/45 to-background/85" />
-      </div>
+      {/* Page-wide backdrop — fades to a dimmer floor as you scroll */}
+      <Backdrop
+        image="/aurora.jpg"
+        base={0.7}
+        floor={0.28}
+        veilClassName="bg-gradient-to-b from-background/30 via-background/45 to-background/85"
+      />
 
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-[var(--border)]">

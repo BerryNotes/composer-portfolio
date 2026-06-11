@@ -2,20 +2,15 @@ import Link from "next/link";
 import { PROJECTS } from "@/lib/projects";
 import { Reveal } from "@/components/Reveal";
 import { Poster } from "@/components/Poster";
+import { Backdrop } from "@/components/Backdrop";
 
 export const metadata = { title: "Work" };
 
 export default function WorkPage() {
   return (
     <div>
-      {/* Page-wide fixed backdrop — the aurora stays semi-visible as you scroll */}
-      <div aria-hidden className="pointer-events-none fixed inset-0 -z-10">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-60"
-          style={{ backgroundImage: "url(/aurora.jpg)" }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/55 to-background/85" />
-      </div>
+      {/* Page-wide backdrop — fades to a dimmer floor as you scroll */}
+      <Backdrop image="/aurora.jpg" base={0.6} floor={0.22} />
 
       {/* Hero band */}
       <section className="relative overflow-hidden border-b border-[var(--border)]">
@@ -64,9 +59,6 @@ export default function WorkPage() {
                 </span>
               </div>
               <p className="mt-2 text-sm text-foreground/60">{p.summary}</p>
-              <div className="mt-3 text-xs uppercase tracking-[0.18em] text-foreground/40">
-                {p.role} · {p.category}
-              </div>
             </Link>
           </Reveal>
         ))}

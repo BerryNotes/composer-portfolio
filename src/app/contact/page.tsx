@@ -1,19 +1,19 @@
 import { SITE } from "@/lib/site";
 import { Reveal } from "@/components/Reveal";
+import { Backdrop } from "@/components/Backdrop";
 
 export const metadata = { title: "Contact" };
 
 export default function ContactPage() {
   return (
     <div>
-      {/* Page-wide fixed backdrop — the night sky stays visible as you scroll */}
-      <div aria-hidden className="pointer-events-none fixed inset-0 -z-10">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url(/backdrop-night.jpg)" }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/30 to-background/85" />
-      </div>
+      {/* Page-wide backdrop — fades to a dimmer floor as you scroll */}
+      <Backdrop
+        image="/backdrop-night.jpg"
+        base={1}
+        floor={0.35}
+        veilClassName="bg-gradient-to-b from-transparent via-background/30 to-background/85"
+      />
 
       {/* Hero band */}
       <section className="relative overflow-hidden border-b border-[var(--border)]">
@@ -65,6 +65,44 @@ export default function ContactPage() {
               </div>
               <div className="font-display text-2xl tracking-tight inline-flex items-center gap-2">
                 Artist profile
+                <span className="transition-transform duration-500 group-hover:translate-x-2">
+                  ↗
+                </span>
+              </div>
+            </a>
+          </Reveal>
+
+          <Reveal delay={280}>
+            <a
+              href={SITE.youtubeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block rounded-lg border border-[var(--border)] bg-[var(--card)] px-6 py-5 hover:bg-[var(--muted-bg)] hover:border-[var(--rose)] transition"
+            >
+              <div className="text-xs uppercase tracking-[0.2em] text-[var(--rose)] mb-1">
+                YouTube
+              </div>
+              <div className="font-display text-2xl tracking-tight inline-flex items-center gap-2">
+                Berrynote
+                <span className="transition-transform duration-500 group-hover:translate-x-2">
+                  ↗
+                </span>
+              </div>
+            </a>
+          </Reveal>
+
+          <Reveal delay={360}>
+            <a
+              href={SITE.appleMusicUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block rounded-lg border border-[var(--border)] bg-[var(--card)] px-6 py-5 hover:bg-[var(--muted-bg)] hover:border-[var(--teal)] transition"
+            >
+              <div className="text-xs uppercase tracking-[0.2em] text-[var(--teal)] mb-1">
+                Apple Music
+              </div>
+              <div className="font-display text-2xl tracking-tight inline-flex items-center gap-2">
+                LiteBeats
                 <span className="transition-transform duration-500 group-hover:translate-x-2">
                   ↗
                 </span>
