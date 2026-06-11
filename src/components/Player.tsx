@@ -54,6 +54,16 @@ export function PlayerProvider({ children }: { children: React.ReactNode }) {
 
   const queueRef = useRef(queue);
   queueRef.current = queue;
+  const playingRef = useRef(playing);
+  playingRef.current = playing;
+
+  // Cloudflare Pages serves audio without byte-range support, which breaks
+  // seeking into unbuffered parts of a track. Workaround: start streaming
+  // immediately for instant playback, fetch the full file in the background,
+  // then swap the element onto a local blob — after that the whole track is
+  // seekable. Blobs are cached for the session so replays are instant.
+  const blobCache = useRef(new Map<string, string>());
+  const fetchSeq = useRef(0);
 
   // Registry of on-page players and the srcs they display, so the mini
   // player knows when to step aside.
@@ -103,13 +113,61 @@ export function PlayerProvider({ children }: { children: React.ReactNode }) {
       return;
     }
     const src = queue[index]?.src;
-    if (src && !a.src.endsWith(src)) {
-      a.src = src;
+    if (!src) return;
+
+    // Track identity lives in data-key because a.src may be a blob: URL.
+    if (a.dataset.key !== src) {
+      a.dataset.key = src;
       setProgress(0);
       setDuration(0);
+      const cached = blobCache.current.get(src);
+      if (cached) {
+        a.src = cached;
+      } else {
+        // Stream now for instant start…
+        a.src = src;
+        // …and swap to a fully-seekable local copy once it's downloaded.
+        const seq = ++fetchSeq.current;
+        fetch(src)
+          .then((r) => {
+            if (!r.ok) throw new Error(String(r.status));
+            return r.blob();
+          })
+          .then((blob) => {
+            const url = URL.createObjectURL(blob);
+            blobCache.current.set(src, url);
+            if (fetchSeq.current !== seq || a.dataset.key !== src) return;
+            const t = a.currentTime;
+            const onMeta = () => {
+              try {
+                a.currentTime = t;
+              } catch {
+                /* ignore */
+              }
+              // Resume from React state, not an element snapshot — the swap
+              // can land before the initial play() has physically started.
+              if (playingRef.current) a.play().catch(() => {});
+            };
+            a.addEventListener("loadedmetadata", onMeta, { once: true });
+            a.src = url;
+          })
+          .catch(() => {
+            /* network hiccup — streaming playback continues as-is */
+          });
+      }
     }
-    if (playing) a.play().catch(() => setPlaying(false));
-    else a.pause();
+    if (playing) {
+      a.play().catch((err: unknown) => {
+        // Swapping src to the blob aborts an in-flight play() — that's
+        // expected and the swap resumes playback itself. Only a real
+        // autoplay denial should flip the UI to paused.
+        if ((err as DOMException)?.name === "NotAllowedError") {
+          setPlaying(false);
+        }
+      });
+    } else {
+      a.pause();
+    }
   }, [index, queue, playing]);
 
   const playQueue = useCallback((q: PlayerTrack[], i: number) => {
