@@ -61,7 +61,7 @@ export const HOME_FEATURED: FeaturedGroup[] = [
     label: "Electronic",
     accent: "teal",
     items: [
-      { title: "Games of Language", src: "/audio/preview/games-of-language.mp3", duration: "0:27" },
+      { title: "Doin' It Right", src: "/audio/doin-it-right.mp3", duration: "4:02" },
       { title: "Lasier", src: "/audio/lasier.mp3", duration: "2:45" },
       { title: "Deciduous Daydream", src: "/audio/untitled-34.mp3", duration: "2:02" },
     ],
