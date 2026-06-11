@@ -4,6 +4,7 @@ import "./globals.css";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { PlayerProvider, MiniPlayer } from "@/components/Player";
+import { SmoothScroll } from "@/components/SmoothScroll";
 import { SITE } from "@/lib/site";
 
 const geistSans = Geist({
@@ -48,6 +49,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <PlayerProvider>
+          <SmoothScroll />
           <Nav />
           <main className="flex-1">{children}</main>
           <Footer />
