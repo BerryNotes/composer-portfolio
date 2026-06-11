@@ -15,9 +15,9 @@ export default function ContactPage() {
         veilClassName="bg-gradient-to-b from-transparent via-background/30 to-background/85"
       />
 
-      {/* Hero band */}
-      <section className="relative overflow-hidden border-b border-[var(--border)]">
-        <div className="relative mx-auto max-w-3xl px-6 py-24 sm:py-32">
+      {/* Hero band — compact, so the channels sit above the fold */}
+      <section className="relative overflow-hidden">
+        <div className="relative mx-auto max-w-3xl px-6 pt-14 pb-8 sm:pt-16 sm:pb-10">
           <Reveal>
             <p className="text-sm uppercase tracking-[0.2em] text-[var(--rose)] mb-3">
               Contact
@@ -25,7 +25,7 @@ export default function ContactPage() {
             <h1 className="font-display text-5xl sm:text-6xl tracking-tight">
               Say hi.
             </h1>
-            <p className="mt-6 text-lg text-foreground/70 max-w-xl">
+            <p className="mt-4 text-lg text-foreground/70 max-w-xl">
               If you are scoring a film, a game, or a record and need a
               composer, send a few sentences about the project. Every
               inquiry receives a response.
@@ -34,7 +34,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <div className="mx-auto max-w-3xl px-6 py-16">
+      <div className="mx-auto max-w-3xl px-6 pb-16">
         <div className="grid gap-4 sm:grid-cols-2">
           {CHANNELS.map((c, i) => (
             <Reveal key={c.label} delay={120 + i * 80}>
