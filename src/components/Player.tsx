@@ -97,12 +97,23 @@ export function PlayerProvider({ children }: { children: React.ReactNode }) {
     a.addEventListener("timeupdate", onTime);
     a.addEventListener("loadedmetadata", onDur);
     a.addEventListener("ended", onEnd);
+    // A Spotify embed started playing — yield to it.
+    const onSpotify = () => setPlaying(false);
+    window.addEventListener("pv-spotify-playing", onSpotify);
     return () => {
       a.removeEventListener("timeupdate", onTime);
       a.removeEventListener("loadedmetadata", onDur);
       a.removeEventListener("ended", onEnd);
+      window.removeEventListener("pv-spotify-playing", onSpotify);
     };
   }, []);
+
+  // Tell Spotify embeds to pause whenever hosted playback starts.
+  useEffect(() => {
+    if (playing) {
+      window.dispatchEvent(new CustomEvent("pv-hosted-playing"));
+    }
+  }, [playing]);
 
   // Keep the element in sync with state.
   useEffect(() => {
