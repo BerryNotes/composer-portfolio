@@ -40,8 +40,8 @@ export default function MusicPage() {
           </Reveal>
           <Reveal delay={180}>
             <p className="mt-6 max-w-2xl text-lg text-foreground/70 leading-relaxed">
-              Dive in! Featured tracks by category, full albums, and the
-              complete catalog — all playable right here.
+              Featured tracks by category, full albums, and the complete
+              catalog.
             </p>
           </Reveal>
         </div>
@@ -51,19 +51,12 @@ export default function MusicPage() {
       <section className="border-b border-[var(--border)]">
         <div className="mx-auto max-w-4xl px-6 py-20 sm:py-24">
           <Reveal>
-            <div className="flex items-center gap-4 mb-3">
-              <p className="text-sm uppercase tracking-[0.2em] text-[var(--amber)]">
+            <div className="flex items-center gap-4 mb-8">
+              <h2 className="font-display text-3xl sm:text-4xl tracking-tight">
                 Featured songs
-              </p>
-              <Waveform bars={18} className="h-5" color="var(--amber)" />
+              </h2>
+              <Waveform bars={18} className="h-6" color="var(--amber)" />
             </div>
-            <h2 className="font-display text-3xl sm:text-4xl tracking-tight mb-2">
-              Hand-picked, in full!
-            </h2>
-            <p className="text-foreground/60 max-w-xl mb-8">
-              A set of complete tracks, hosted right here and ready to go — no
-              preview cutoffs. Hit play on any one!
-            </p>
           </Reveal>
           <Reveal delay={120}>
             <AudioPlayer tracks={FEATURED_AUDIO} />
@@ -79,16 +72,9 @@ export default function MusicPage() {
         />
         <div className="relative mx-auto max-w-6xl px-6 py-20 sm:py-24">
           <Reveal>
-            <p className="text-sm uppercase tracking-[0.2em] text-[var(--rose)] mb-3">
-              Featured
-            </p>
-            <h2 className="font-display text-3xl sm:text-4xl tracking-tight mb-2">
-              Start by sound!
+            <h2 className="font-display text-3xl sm:text-4xl tracking-tight">
+              Favorites
             </h2>
-            <p className="text-foreground/60 max-w-xl">
-              Favorites from each side of the catalog — the labels reflect the
-              sound, not strict genre. Hit play on any of them!
-            </p>
           </Reveal>
 
           <div className="mt-12 space-y-10">
@@ -116,9 +102,6 @@ export default function MusicPage() {
             </div>
           </Reveal>
           <Reveal delay={120} className="sm:col-span-7 space-y-5">
-            <p className="text-sm uppercase tracking-[0.2em] text-[var(--amber)]">
-              How it gets made
-            </p>
             <h2 className="font-display text-3xl sm:text-4xl tracking-tight">
               Written and recorded in-house.
             </h2>

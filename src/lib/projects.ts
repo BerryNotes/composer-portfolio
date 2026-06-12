@@ -51,17 +51,16 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
-    slug: "hamlet-uatx",
+    slug: "hamlet",
     title: "Hamlet",
-    client: "UATX",
     role: "Composer, sound designer, show-control developer",
     year: "2026",
     category: "Concert",
     image: "/projects/ophelia.jpg",
     summary:
-      "Original score and a custom web-based cue system for UATX's production of Hamlet. Two performances, approximately 150 in attendance per night.",
+      "Original score and a custom web-based cue system for a college production of Hamlet. Two performances, approximately 150 in attendance per night.",
     description:
-      "A traditional staging of Hamlet at UATX, directed by London. I composed the full incidental score — five pre-recorded cues, with the Ophelia songs and the court song at its center — and built the show-control system that fired them: a small web app the stage manager drove from a laptop. Two performances, roughly 150 in attendance each night.",
+      "A college production of Hamlet, staged traditionally. I composed the full incidental score — five pre-recorded cues, with the Ophelia songs and the court song at its center — and built the show-control system that fired them: a small web app the stage manager drove from a laptop. Two performances, roughly 150 in attendance each night.",
     tracks: [
       { title: "Court", src: "/audio/hamlet-1.mp3", duration: "1:00" },
       { title: "Funeral", src: "/audio/hamlet-2.mp3", duration: "1:07" },

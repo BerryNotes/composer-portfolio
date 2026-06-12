@@ -70,15 +70,10 @@ export default function HomePage() {
       <section className="border-t border-[var(--border)]">
         <div className="mx-auto max-w-6xl px-6 py-24 sm:py-32">
           <Reveal>
-            <div className="mb-16">
-              <p className="text-sm uppercase tracking-[0.2em] text-[var(--amber)] mb-3">
+            <div className="mb-12">
+              <p className="text-sm uppercase tracking-[0.2em] text-[var(--amber)]">
                 What I do
               </p>
-              <h2 className="font-display text-3xl sm:text-4xl tracking-tight">
-                Four ways
-                <br />
-                I show up.
-              </h2>
             </div>
           </Reveal>
 
@@ -268,22 +263,22 @@ type Service = {
 const SERVICES: Service[] = [
   {
     title: "Original score",
-    body: "Complete or partial scores for film, television, and shorts — spotting, sketches, demos, then a final recording, live or sampled. Every cue earns its place!",
+    body: "Complete or partial scores for film, television, and shorts — spotting, sketches, demos, then a final recording, live or sampled.",
     icon: <FilmIcon />,
   },
   {
     title: "Game music",
-    body: "Adaptive scores built around how players actually move — vertical layers, horizontal cues, and clean stems, ready for Wwise or FMOD!",
+    body: "Adaptive scores built around how players move — vertical layers, horizontal cues, and clean stems.",
     icon: <GameIcon />,
   },
   {
     title: "Arranging and orchestration",
-    body: "Strings, brass, and woodwinds, charted for live players or programmed sessions and delivered as stems and printed parts. Bring me the melody!",
+    body: "Strings, brass, and woodwinds, charted for live players or programmed sessions and delivered as stems and printed parts.",
     icon: <NoteIcon />,
   },
   {
     title: "Collaborations",
-    body: "Songwriting and co-production with artists — I bring the instrumentation and a long ear, you bring the song. Let's build it together!",
+    body: "Songwriting and co-production with artists — I bring the instrumentation and a long ear, you bring the song.",
     icon: <CollabIcon />,
   },
 ];

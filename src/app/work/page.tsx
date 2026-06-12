@@ -22,11 +22,6 @@ export default function WorkPage() {
             <h1 className="font-display text-5xl sm:text-6xl tracking-tight">
               Work
             </h1>
-            <p className="mt-4 max-w-2xl text-foreground/70">
-              A curated selection of recent and ongoing projects. Focused on
-              work that represents the practice rather than a comprehensive
-              credits list.
-            </p>
           </Reveal>
         </div>
       </section>
