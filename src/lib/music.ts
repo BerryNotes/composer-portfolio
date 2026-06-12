@@ -70,6 +70,7 @@ export const HOME_FEATURED: FeaturedGroup[] = [
     label: "Ambient",
     accent: "indigo",
     items: [
+      { title: "Lucid Dreaming", src: "/audio/lucid-dreaming.mp3", duration: "3:05" },
       { title: "Water's Mist", src: "/audio/waters-mist.mp3", duration: "5:24" },
       { title: "Friendship Is Magic", src: "/audio/preview/friendship-is-magic.mp3", duration: "0:27" },
       { title: "Last One", src: "/audio/preview/last-one.mp3", duration: "0:29" },
