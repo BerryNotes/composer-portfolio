@@ -1,8 +1,17 @@
 "use client";
 
-import { useEffect, useId, useMemo } from "react";
+import { useEffect, useId, useMemo, useState } from "react";
 import type { Track } from "@/lib/projects";
 import { usePlayer, fmtTime, type PlayerTrack } from "@/components/Player";
+
+// Stable per-track anchor id, e.g. "Lucid Dreaming" -> "lucid-dreaming".
+// Used for shareable links like peter-vasilik.pages.dev/#lucid-dreaming.
+export function trackSlug(title: string): string {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
 
 export function AudioPlayer({ tracks }: { tracks: Track[] }) {
   const playable = tracks.filter((t) => t.src) as PlayerTrack[];
@@ -44,11 +53,43 @@ function Player({ tracks }: { tracks: PlayerTrack[] }) {
     progress,
     duration,
     playQueue,
+    cueQueue,
     toggle,
     seek,
     registerVisible,
     unregisterVisible,
   } = usePlayer();
+
+  const [flashIdx, setFlashIdx] = useState(-1);
+
+  // Deep link: if the URL hash names one of these tracks, scroll to it, flash
+  // it, and cue it up (paused, one tap from playing). Runs on load and on any
+  // later hash change, so shared links work fresh or in-session.
+  useEffect(() => {
+    let scrollTimer: ReturnType<typeof setTimeout>;
+    let flashTimer: ReturnType<typeof setTimeout>;
+    const apply = () => {
+      const hash = decodeURIComponent(window.location.hash.replace("#", ""));
+      if (!hash) return;
+      const i = tracks.findIndex((t) => trackSlug(t.title) === hash);
+      if (i === -1) return;
+      cueQueue(tracks, i);
+      setFlashIdx(i);
+      const el = document.getElementById(hash);
+      scrollTimer = setTimeout(() => {
+        el?.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 150);
+      flashTimer = setTimeout(() => setFlashIdx(-1), 4000);
+    };
+    apply();
+    window.addEventListener("hashchange", apply);
+    return () => {
+      clearTimeout(scrollTimer);
+      clearTimeout(flashTimer);
+      window.removeEventListener("hashchange", apply);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Tell the global player which tracks this page is showing, so the
   // mini popup hides while this player is on screen.
@@ -124,7 +165,11 @@ function Player({ tracks }: { tracks: PlayerTrack[] }) {
       </div>
       <ul className="divide-y divide-[var(--border)]">
         {tracks.map((t, i) => (
-          <li key={i}>
+          <li
+            key={i}
+            id={trackSlug(t.title)}
+            className={`scroll-mt-28 ${i === flashIdx ? "track-flash" : ""}`}
+          >
             <button
               type="button"
               onClick={() => onRow(i)}

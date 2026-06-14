@@ -28,6 +28,7 @@ type PlayerContextValue = {
   progress: number;
   duration: number;
   playQueue: (queue: PlayerTrack[], index: number) => void;
+  cueQueue: (queue: PlayerTrack[], index: number) => void;
   toggle: () => void;
   stop: () => void;
   seek: (t: number) => void;
@@ -187,6 +188,14 @@ export function PlayerProvider({ children }: { children: React.ReactNode }) {
     setPlaying(true);
   }, []);
 
+  // Load a track but leave it paused — used by deep links so the song is
+  // queued and one tap away, without autoplaying (browsers block that).
+  const cueQueue = useCallback((q: PlayerTrack[], i: number) => {
+    setQueue(q);
+    setIndex(i);
+    setPlaying(false);
+  }, []);
+
   const toggle = useCallback(() => setPlaying((p) => !p), []);
 
   const stop = useCallback(() => {
@@ -225,6 +234,7 @@ export function PlayerProvider({ children }: { children: React.ReactNode }) {
         progress,
         duration,
         playQueue,
+        cueQueue,
         toggle,
         stop,
         seek,

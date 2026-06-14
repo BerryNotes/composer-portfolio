@@ -124,6 +124,18 @@ body::after {
   animation: mini-in 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
+/* Deep-linked track flash — highlights the song a shared link points to. */
+@keyframes track-flash {
+  0%, 100% { background: transparent; box-shadow: inset 0 0 0 0 transparent; }
+  20%, 60% {
+    background: var(--teal-soft);
+    box-shadow: inset 2px 0 0 0 var(--teal);
+  }
+}
+.track-flash {
+  animation: track-flash 4s ease-in-out 1;
+}
+
 /* Animated equalizer bars — small decorative motion for music sections. */
 @keyframes eq {
   0%, 100% { transform: scaleY(0.35); }
@@ -280,6 +292,10 @@ main {
   }
   .mini-pop {
     animation: none;
+  }
+  .track-flash {
+    animation: none;
+    background: var(--teal-soft);
   }
   html {
     scroll-behavior: auto;
